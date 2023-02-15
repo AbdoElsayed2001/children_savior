@@ -1,4 +1,4 @@
-import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
+//import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -75,6 +75,7 @@ class BottomNavScreen extends StatelessWidget{
             //   condition : true,
             //   builder : (context) => cubit.Screens[cubit.currentIndex],
             //   fallback : (context) => Center(child: CircularProgressIndicator(color: Colors.blue,)),
+            // newwwwwww
             // ),
           );
         },
