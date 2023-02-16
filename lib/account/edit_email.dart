@@ -1,8 +1,7 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Edit_Name extends StatelessWidget {
+class Edit_Email extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +20,7 @@ class Edit_Name extends StatelessWidget {
           },
         ),
         title: Text(
-          "Edit Name",
+          "Edit Email",
           style: TextStyle(color: Colors.black, fontSize: 21),
         ),
       ),
@@ -34,8 +33,8 @@ class Edit_Name extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
               decoration: InputDecoration(
-                  label: Text("Edit name"), border: OutlineInputBorder()),
-              keyboardType: TextInputType.name,
+                  label: Text("Edit email"), border: OutlineInputBorder()),
+              keyboardType: TextInputType.emailAddress,
             ),
           ),
           const SizedBox(
