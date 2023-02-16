@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class My_Children extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,8 +42,8 @@ class My_Children extends StatelessWidget {
                 ),
                 CircleAvatar(
                   radius: 35,
-                  //foregroundImage: AssetImage(""),
-                  backgroundImage: NetworkImage(
+                  backgroundImage:
+                  NetworkImage(
                       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGKikGuo9ITvCvFo497pdDc5AaWYU_qZy7lA&usqp=CAU"
                   ),
                 ),

@@ -37,7 +37,7 @@ class _Add_ChildState extends State<Add_Child> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 20,
+              height: 16,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -82,10 +82,10 @@ class _Add_ChildState extends State<Add_Child> {
               ],
             ),
             const SizedBox(
-              height: 20,
+              height: 16,
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(vertical: 4,horizontal: 16),
               child: TextFormField(
                 decoration: InputDecoration(
                     label: Text("Name"), border: OutlineInputBorder()),
@@ -93,7 +93,7 @@ class _Add_ChildState extends State<Add_Child> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(vertical: 4,horizontal: 16),
               child: TextFormField(
                 decoration: InputDecoration(
                     label: Text("Address"), border: OutlineInputBorder()),
@@ -101,7 +101,7 @@ class _Add_ChildState extends State<Add_Child> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(vertical: 4,horizontal: 16),
               child: TextFormField(
                 decoration: InputDecoration(
                     label: Text("Age"), border: OutlineInputBorder()),
@@ -109,51 +109,76 @@ class _Add_ChildState extends State<Add_Child> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(vertical: 4,horizontal: 16),
               child: TextFormField(
                 decoration: InputDecoration(
                     label: Text("Phone"), border: OutlineInputBorder()),
                 keyboardType: TextInputType.phone,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 10,top: 8),
-              child: Text("Gender",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black45),),
-            ),
-            RadioListTile(
-              contentPadding: EdgeInsetsGeometry.lerp(EdgeInsets.all(0),EdgeInsets.all(0) , 0),
-              title: Text("Male",),
-              value: "male",
-              groupValue: gender,
-              onChanged: (value){
-                setState(() {
-                  gender = value.toString();
-                });
-              },
-            ),
-            RadioListTile(
-              contentPadding: EdgeInsetsGeometry.lerp(EdgeInsets.all(0),EdgeInsets.all(0) , 0),
-              title: Text("Female"),
-              value: "female",
-              groupValue: gender,
-              onChanged: (value){
-                setState(() {
-                  gender = value.toString();
-                });
-              },
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            Center(
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  fixedSize: MaterialStateProperty.all(Size(150, 45)),
+            ListTile(
+              title: RichText(
+                text: TextSpan(
+                  text: "Connect Location",
+                  style: TextStyle(
+                     // fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: Colors.black54
+                  ),
                 ),
-                onPressed: () {},
-                child: Text("Save"),
+              ),
+              horizontalTitleGap: 0,
+              trailing: IconButton(
+                onPressed: (){},
+                icon: Icon(Icons.bluetooth,color: Colors.blue,),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4,horizontal: 16),
+              child: Text("Gender",style: TextStyle(//fontWeight: FontWeight.bold,
+                color: Colors.black54,fontSize: 16,),),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 16),
+              child: RadioListTile(
+                contentPadding: EdgeInsetsGeometry.lerp(EdgeInsets.all(0),EdgeInsets.all(0) , 0),
+                title: Text("Male",style: TextStyle(color: Colors.black54),),
+                value: "male",
+                groupValue: gender,
+                onChanged: (value){
+                  setState(() {
+                    gender = value.toString();
+                  });
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 16),
+              child: RadioListTile(
+                contentPadding: EdgeInsetsGeometry.lerp(EdgeInsets.all(0),EdgeInsets.all(0) , 0),
+                title: Text("Female",style: TextStyle(color: Colors.black54)),
+                value: "female",
+                groupValue: gender,
+                onChanged: (value){
+                  setState(() {
+                    gender = value.toString();
+                  });
+                },
+              ),
+            ),
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    fixedSize: MaterialStateProperty.all(Size(150, 45)),
+                  ),
+                  onPressed: () {},
+                  child: Text("Add"),
+                ),
+              ),
+            ),
+
           ],
         ),
       ),

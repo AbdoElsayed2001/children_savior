@@ -35,7 +35,7 @@ class Home extends StatelessWidget {
                     child: CircleAvatar(
                       radius: 45,
                       backgroundImage: NetworkImage(
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6OGYC2nVe-IlmLcuv1TP2TOO2NPZ473c4JQ&usqp=CAU",
+                        "https://3.bp.blogspot.com/-_oofQiLjaI8/W2mouhPZXkI/AAAAAAABXj0/mRiOedr1bFUIi5MLZfglp53i1cEydHy7QCLcBGAs/s1600/13.jpg.4cbe499c45618f176d5aea2b8d599da2.jpg",
                       ),
                     ),
                   ),

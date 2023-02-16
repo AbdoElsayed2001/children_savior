@@ -42,7 +42,7 @@ class Edit_Email extends StatelessWidget {
           ),
           ElevatedButton(
             style: ButtonStyle(
-              fixedSize: MaterialStateProperty.all(Size(150, 40)),
+              fixedSize: MaterialStateProperty.all(Size(150, 45)),
             ),
             onPressed: () {},
             child: Text("Save"),
