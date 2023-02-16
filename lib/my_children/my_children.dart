@@ -1,6 +1,19 @@
+
+
 import 'package:flutter/material.dart';
 
 class My_Children extends StatelessWidget {
+
+  // var childlist = [
+  //   {
+  //     "name":"Amira Ahmed",
+  //     "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGKikGuo9ITvCvFo497pdDc5AaWYU_qZy7lA&usqp=CAU",
+  //   },
+  //   {
+  //     "name":"Kareem Ahmed",
+  //     "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTidsZ60ZDKPik5Smpcm4p_SJGy1YD1Akq8Q1myW_87W3NYSPPvXSu2vUmZvjg6GKQEnI&usqp=CAU",
+  //   }
+  // ];
 
   @override
   Widget build(BuildContext context) {
@@ -51,9 +64,20 @@ class My_Children extends StatelessWidget {
                   width: 12,
                 ),
                 Expanded(
-                  child: Text(
-                    "Amira",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Amira Ahmed",
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+                      TextButton(
+                        onPressed: (){
+                          Navigator.of(context).pushNamed("child_details");
+                        },
+                        child: Text("details..",
+                          style: TextStyle(fontSize: 14, ),),
+                      ),
+                    ],
                   ),
                 ),
                 Column(

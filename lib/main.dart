@@ -4,6 +4,7 @@ import 'package:kids_savior/account/edit_name.dart';
 import 'package:kids_savior/account/edit_phone.dart';
 import 'package:kids_savior/bottomNavBar/bottom_nav_screen.dart';
 import 'package:kids_savior/my_children/add_child.dart';
+import 'package:kids_savior/my_children/child_details.dart';
 import 'package:kids_savior/notification/notification.dart';
 import 'package:kids_savior/settings/settings.dart';
 
@@ -40,6 +41,9 @@ class MyApp extends StatelessWidget {
         },
         "appNotification": (context) {
           return AppNotifications();
+        },
+        "child_details": (context) {
+          return Child_details();
         },
       },
     );
