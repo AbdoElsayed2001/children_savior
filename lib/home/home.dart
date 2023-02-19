@@ -35,7 +35,7 @@ class Home extends StatelessWidget {
                     child: CircleAvatar(
                       radius: 45,
                       backgroundImage: NetworkImage(
-                        "https://3.bp.blogspot.com/-_oofQiLjaI8/W2mouhPZXkI/AAAAAAABXj0/mRiOedr1bFUIi5MLZfglp53i1cEydHy7QCLcBGAs/s1600/13.jpg.4cbe499c45618f176d5aea2b8d599da2.jpg",
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGKikGuo9ITvCvFo497pdDc5AaWYU_qZy7lA&usqp=CAU",
                       ),
                     ),
                   ),
@@ -59,10 +59,22 @@ class Home extends StatelessWidget {
                             elevation: MaterialStateProperty.all(5),
                           ),
                           onPressed: () {},
-                          child: Image.asset(
-                            "assets/image/phone-call.png",
-                            height: 30,
-                            width: 30,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.shade400,
+                                  spreadRadius: 1,
+                                  blurRadius: 25,
+                                  offset: const Offset(3, 5),
+                                ),
+                              ],
+                            ),
+                            child: Image.asset(
+                              "assets/images/phone-call.png",
+                              height: 30,
+                              width: 30,
+                            ),
                           ),
                         ),
                       ),
@@ -83,11 +95,26 @@ class Home extends StatelessWidget {
                                         bottomRight: Radius.circular(20)))),
                             elevation: MaterialStateProperty.all(5),
                           ),
-                          onPressed: () {},
-                          child: Image.asset(
-                            "assets/image/about-xxl.png",
-                            height: 30,
-                            width: 30,
+                          onPressed: () {
+                            Navigator.of(context).pushNamed("about");
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.shade400,
+                                  spreadRadius: 1,
+                                  blurRadius: 25,
+                                  offset: const Offset(3, 5),
+                                ),
+                              ],
+                            ),
+                            child: Image.asset(
+
+                              "assets/images/about-xxl.png",
+                              height: 30,
+                              width: 30,
+                            ),
                           ),
                         ),
                       ),

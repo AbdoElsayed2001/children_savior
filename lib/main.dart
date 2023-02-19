@@ -3,10 +3,13 @@ import 'package:kids_savior/account/edit_email.dart';
 import 'package:kids_savior/account/edit_name.dart';
 import 'package:kids_savior/account/edit_phone.dart';
 import 'package:kids_savior/bottomNavBar/bottom_nav_screen.dart';
+import 'package:kids_savior/home/about.dart';
 import 'package:kids_savior/my_children/add_child.dart';
 import 'package:kids_savior/my_children/child_details.dart';
 import 'package:kids_savior/notification/notification.dart';
+import 'package:kids_savior/search/matching.dart';
 import 'package:kids_savior/settings/settings.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -44,6 +47,12 @@ class MyApp extends StatelessWidget {
         },
         "child_details": (context) {
           return Child_details();
+        },
+        "about": (context) {
+          return About();
+        },
+        "matching": (context) {
+          return Matching();
         },
       },
     );

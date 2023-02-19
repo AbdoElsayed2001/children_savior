@@ -5,7 +5,9 @@ class Search extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-          onPressed: (){},
+          onPressed: (){
+            Navigator.of(context).pushNamed("matching");
+          },
         child: Icon(Icons.camera_alt),
         backgroundColor: Colors.blue,
       ),

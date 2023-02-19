@@ -182,34 +182,35 @@ class Child_details extends StatelessWidget{
               icon: Icon(Icons.edit,color: Colors.blue,),
             ),
           ),
-          ListTile(
-            title: RichText(
-              text: TextSpan(
-                text: "GPS",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                    color: Colors.black
+          Expanded(
+            child: ListTile(
+              title: RichText(
+                text: TextSpan(
+                  text: "GPS",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      color: Colors.black
+                  ),
                 ),
               ),
-            ),
-            leading: Icon(
-              Icons.watch,
-              color: Colors.black,
-            ),
-            horizontalTitleGap: 0,
-            trailing: IconButton(
-              onPressed: (){},
-              icon: Icon(Icons.bluetooth,color: Colors.blue,),
+              leading: Icon(
+                Icons.watch,
+                color: Colors.black,
+              ),
+              horizontalTitleGap: 0,
+              trailing: IconButton(
+                onPressed: (){},
+                icon: Icon(Icons.bluetooth,color: Colors.blue,),
+              ),
             ),
           ),
-          const SizedBox(height: 30,),
           Center(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: ElevatedButton(
                 style: ButtonStyle(
-                  fixedSize: MaterialStateProperty.all(Size(120, 40)),
+                  fixedSize: MaterialStateProperty.all(Size(150, 45)),
                 ),
                 onPressed: () {},
                 child: Text("Delete Child"),

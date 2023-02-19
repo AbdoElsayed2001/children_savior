@@ -52,7 +52,7 @@ class _Add_ChildState extends State<Add_Child> {
                         radius: 50,
                         child: Padding(
                           padding: const EdgeInsets.all(24.0),
-                          child: Image.asset("assets/image/picture.png"),
+                          child: Image.asset("assets/images/picture.png"),
                         ),
                       ),
                       IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt,size: 35,color: Colors.blue,))
@@ -72,7 +72,7 @@ class _Add_ChildState extends State<Add_Child> {
                         radius: 50,
                         child: Padding(
                           padding: const EdgeInsets.all(24.0),
-                          child: Image.asset("assets/image/picture.png"),
+                          child: Image.asset("assets/images/picture.png"),
                         ),
                       ),
                       IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt,size: 35,color: Colors.blue,))
