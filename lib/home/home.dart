@@ -103,6 +103,7 @@ class Home extends StatelessWidget {
                                   offset: const Offset(3, 5),
                                 ),
                               ],
+
                             ),
                             child: Image.asset(
                               "assets/images/about-xxl.png",
