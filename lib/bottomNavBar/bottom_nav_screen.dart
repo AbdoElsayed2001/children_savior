@@ -20,9 +20,6 @@ class BottomNavScreen extends StatelessWidget{
             appBar: AppBar(
               title: Text(
                 "Children Savior",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 24,fontStyle: FontStyle.italic,
-                ),
               ),
               actions: [
                 IconButton(

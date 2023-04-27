@@ -9,7 +9,7 @@ class Search extends StatelessWidget{
             Navigator.of(context).pushNamed("matching");
           },
         child: Icon(Icons.camera_alt),
-        backgroundColor: Colors.blue,
+        //backgroundColor: Colors.blue,
       ),
       body: Container(
         child: Center(

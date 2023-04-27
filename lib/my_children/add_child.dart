@@ -19,7 +19,7 @@ class _Add_ChildState extends State<Add_Child> {
           icon: Icon(
             size: 26,
             Icons.arrow_back,
-            color: Colors.black,
+            //color: Colors.black,
           ),
           onPressed: () {
             Navigator.of(context).pop();

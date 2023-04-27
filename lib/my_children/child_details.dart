@@ -10,7 +10,7 @@ class Child_details extends StatelessWidget{
           icon: Icon(
             size: 26,
             Icons.arrow_back,
-            color: Colors.black,
+            //color: Colors.black,
           ),
           onPressed: () {
             Navigator.of(context).pop();
@@ -39,7 +39,9 @@ class Child_details extends StatelessWidget{
                       radius: 55,
                       backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGKikGuo9ITvCvFo497pdDc5AaWYU_qZy7lA&usqp=CAU"),
                     ),
-                    IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt,size: 40,color: Colors.blue,))
+                    IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt,size: 40,
+                     // color: Colors.blue,
+                    ))
                   ],
                 ),
               ),
@@ -56,7 +58,8 @@ class Child_details extends StatelessWidget{
                       radius: 55,
                       backgroundImage: NetworkImage("https://www.elbalad.news/Upload/libfiles/950/2/630.jpg"),
                     ),
-                    IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt,size: 40,color: Colors.blue,))
+                    IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt,size: 40,//color: Colors.blue,
+                    ))
                   ],
                 ),
               ),
@@ -78,14 +81,15 @@ class Child_details extends StatelessWidget{
             ),
             leading: Icon(
               Icons.account_circle_outlined,
-              color: Colors.black,
+              //color: Colors.black,
             ),
             horizontalTitleGap: 0,
             trailing: IconButton(
               onPressed: (){
                 Navigator.of(context).pushNamed("edit_name");
               },
-              icon: Icon(Icons.edit,color: Colors.blue,),
+              icon: Icon(Icons.edit,//color: Colors.blue,
+              ),
             ),
           ),
           ListTile(
@@ -101,14 +105,15 @@ class Child_details extends StatelessWidget{
             ),
             leading: Icon(
               Icons.location_on_outlined,
-              color: Colors.black,
+              //color: Colors.black,
             ),
             horizontalTitleGap: 0,
             trailing: IconButton(
               onPressed: (){
                 Navigator.of(context).pushNamed("edit_name");
               },
-              icon: Icon(Icons.edit,color: Colors.blue,),
+              icon: Icon(Icons.edit,//color: Colors.blue,
+              ),
             ),
           ),
           ListTile(
@@ -124,14 +129,15 @@ class Child_details extends StatelessWidget{
             ),
             leading: Icon(
               Icons.date_range,
-              color: Colors.black,
+             // color: Colors.black,
             ),
             horizontalTitleGap: 0,
             trailing: IconButton(
               onPressed: (){
                 Navigator.of(context).pushNamed("edit_name");
               },
-              icon: Icon(Icons.edit,color: Colors.blue,),
+              icon: Icon(Icons.edit,//color: Colors.blue,
+              ),
             ),
           ),
           ListTile(
@@ -147,14 +153,15 @@ class Child_details extends StatelessWidget{
             ),
             leading: Icon(
               Icons.phone,
-              color: Colors.black,
+              //color: Colors.black,
             ),
             horizontalTitleGap: 0,
             trailing: IconButton(
               onPressed: (){
                 Navigator.of(context).pushNamed("edit_name");
               },
-              icon: Icon(Icons.edit,color: Colors.blue,),
+              icon: Icon(Icons.edit,//color: Colors.blue,
+              ),
             ),
           ),
           ListTile(
@@ -170,14 +177,15 @@ class Child_details extends StatelessWidget{
             ),
             leading: Icon(
               Icons.girl,
-              color: Colors.black,
+              //color: Colors.black,
             ),
             horizontalTitleGap: 0,
             trailing: IconButton(
               onPressed: (){
                 Navigator.of(context).pushNamed("edit_name");
               },
-              icon: Icon(Icons.edit,color: Colors.blue,),
+              icon: Icon(Icons.edit,//color: Colors.blue,
+              ),
             ),
           ),
           Expanded(
@@ -194,12 +202,13 @@ class Child_details extends StatelessWidget{
               ),
               leading: Icon(
                 Icons.watch,
-                color: Colors.black,
+                //color: Colors.black,
               ),
               horizontalTitleGap: 0,
               trailing: IconButton(
                 onPressed: (){},
-                icon: Icon(Icons.bluetooth,color: Colors.blue,),
+                icon: Icon(Icons.bluetooth,//color: Colors.blue,
+                ),
               ),
             ),
           ),

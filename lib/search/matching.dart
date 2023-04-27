@@ -11,7 +11,7 @@ class Matching extends StatelessWidget{
           icon: Icon(
             size: 26,
             Icons.arrow_back,
-            color: Colors.black,
+           // color: Colors.black,
           ),
           onPressed: () {
             Navigator.of(context).pop();

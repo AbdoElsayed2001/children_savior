@@ -23,7 +23,7 @@ class My_Children extends StatelessWidget {
           Navigator.of(context).pushNamed("add_child");
         },
         child: Icon(Icons.add),
-        backgroundColor: Colors.blue,
+       // backgroundColor: Colors.blue,
       ),
       body: ListView.builder(
         itemCount: 3,

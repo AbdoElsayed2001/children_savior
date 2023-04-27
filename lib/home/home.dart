@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -11,11 +12,12 @@ class Home extends StatelessWidget {
             return Column(
               children: [
                 Container(
-                  height: 150,
+                  height: 160,
                   width: double.infinity,
                   margin: EdgeInsetsDirectional.only(
                       start: 16, top: 8, end: 16, bottom: 0),
                   decoration: BoxDecoration(
+                    image:  DecorationImage(image: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGKikGuo9ITvCvFo497pdDc5AaWYU_qZy7lA&usqp=CAU",),fit: BoxFit.fill),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.shade400,
@@ -30,14 +32,7 @@ class Home extends StatelessWidget {
                         bottomLeft: Radius.zero,
                         bottomRight: Radius.zero,
                       ),
-                      color: Colors.blue),
-                  child: Center(
-                    child: CircleAvatar(
-                      radius: 45,
-                      backgroundImage: NetworkImage(
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGKikGuo9ITvCvFo497pdDc5AaWYU_qZy7lA&usqp=CAU",
-                      ),
-                    ),
+                      color: Colors.blue
                   ),
                 ),
                 Row(
@@ -110,7 +105,6 @@ class Home extends StatelessWidget {
                               ],
                             ),
                             child: Image.asset(
-
                               "assets/images/about-xxl.png",
                               height: 30,
                               width: 30,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:hexcolor/hexcolor.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:kids_savior/account/edit_email.dart';
 import 'package:kids_savior/account/edit_name.dart';
 import 'package:kids_savior/account/edit_phone.dart';
@@ -41,8 +43,15 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 24,fontStyle: FontStyle.italic,
           ),
           iconTheme: IconThemeData(
-              color: Colors.white
+              color: Colors.black
           ),
+        ),
+        iconTheme: IconThemeData(
+          color: Colors.blue,
+        ),
+        listTileTheme: ListTileThemeData(
+          iconColor: Colors.blue,
+
         ),
         floatingActionButtonTheme: FloatingActionButtonThemeData(
           backgroundColor: Colors.blue,
@@ -50,7 +59,7 @@ class MyApp extends StatelessWidget {
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           type: BottomNavigationBarType.fixed,
           selectedItemColor: Colors.blue,
-          unselectedItemColor: Colors.grey,
+          unselectedItemColor: Colors.black,
           elevation: 20.0,
           backgroundColor: Colors.white,
         ),
@@ -59,10 +68,9 @@ class MyApp extends StatelessWidget {
         ),
       ),
       darkTheme: ThemeData(
-        primarySwatch: Colors.blue,
+        //primarySwatch: HexColor("007acc"),
         scaffoldBackgroundColor: HexColor("1e1e1e"),
         appBarTheme: AppBarTheme(
-          backwardsCompatibility: false,
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: HexColor("252526"),
             statusBarIconBrightness: Brightness.light,
@@ -70,19 +78,26 @@ class MyApp extends StatelessWidget {
           backgroundColor: HexColor("1e1e1e"),
           elevation: 0.0,
           titleTextStyle: TextStyle(
-            fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 24,fontStyle: FontStyle.italic,
+            fontWeight: FontWeight.bold, color: Colors.white, fontSize: 24,fontStyle: FontStyle.italic,
           ),
           iconTheme: IconThemeData(
             color: Colors.white
           ),
         ),
+        iconTheme: IconThemeData(
+            color: HexColor("007acc"),
+        ),
+        listTileTheme: ListTileThemeData(
+          iconColor: Colors.white,
+
+        ),
         floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: Colors.blue,
+          backgroundColor: HexColor("007acc"),
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           type: BottomNavigationBarType.fixed,
           selectedItemColor: HexColor("007acc"),
-          unselectedItemColor: Colors.white,
+          unselectedItemColor: Colors.grey,
           elevation: 20.0,
           backgroundColor: HexColor("1e1e1e"),
         ),
@@ -90,7 +105,7 @@ class MyApp extends StatelessWidget {
           bodyText1: TextStyle(),
         ),
       ),
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       home: SplashScreen(),
