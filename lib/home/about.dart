@@ -16,8 +16,6 @@ class _AboutState extends State<About> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.white,
-        elevation: 0.0,
         leading: IconButton(
           icon: Icon(
             size: 26,

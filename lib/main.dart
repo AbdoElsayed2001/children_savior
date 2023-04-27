@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:kids_savior/account/edit_email.dart';
 import 'package:kids_savior/account/edit_name.dart';
 import 'package:kids_savior/account/edit_phone.dart';
@@ -24,6 +26,71 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: AppBarTheme(
+          backwardsCompatibility: false,
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: Colors.white,
+            statusBarIconBrightness: Brightness.dark,
+          ),
+          backgroundColor: Colors.white,
+          elevation: 0.0,
+          titleTextStyle: TextStyle(
+            fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 24,fontStyle: FontStyle.italic,
+          ),
+          iconTheme: IconThemeData(
+              color: Colors.white
+          ),
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.blue,
+        ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: Colors.blue,
+          unselectedItemColor: Colors.grey,
+          elevation: 20.0,
+          backgroundColor: Colors.white,
+        ),
+        textTheme: TextTheme(
+          bodyText1: TextStyle(),
+        ),
+      ),
+      darkTheme: ThemeData(
+        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: HexColor("1e1e1e"),
+        appBarTheme: AppBarTheme(
+          backwardsCompatibility: false,
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: HexColor("252526"),
+            statusBarIconBrightness: Brightness.light,
+          ),
+          backgroundColor: HexColor("1e1e1e"),
+          elevation: 0.0,
+          titleTextStyle: TextStyle(
+            fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 24,fontStyle: FontStyle.italic,
+          ),
+          iconTheme: IconThemeData(
+            color: Colors.white
+          ),
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.blue,
+        ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: HexColor("007acc"),
+          unselectedItemColor: Colors.white,
+          elevation: 20.0,
+          backgroundColor: HexColor("1e1e1e"),
+        ),
+        textTheme: TextTheme(
+          bodyText1: TextStyle(),
+        ),
+      ),
+      themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       home: SplashScreen(),

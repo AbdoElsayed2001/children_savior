@@ -18,8 +18,6 @@ class BottomNavScreen extends StatelessWidget{
 
           return  Scaffold(
             appBar: AppBar(
-              backgroundColor: Colors.white,
-              elevation: 0.0,
               title: Text(
                 "Children Savior",
                 style: TextStyle(
@@ -29,7 +27,7 @@ class BottomNavScreen extends StatelessWidget{
               actions: [
                 IconButton(
                   icon: Icon(Icons.notifications_none_rounded),
-                  color: Colors.black,
+                  //color: Colors.black,
                   iconSize: 30,
                   onPressed: () {
                     Navigator.of(context).pushNamed("appNotification");
@@ -37,7 +35,7 @@ class BottomNavScreen extends StatelessWidget{
                 ),
                 IconButton(
                   icon: Icon(Icons.settings_outlined),
-                  color: Colors.black,
+                  //color: Colors.black,
                   iconSize: 30,
                   onPressed: () {
                     Navigator.of(context).pushNamed("settings");
@@ -52,11 +50,10 @@ class BottomNavScreen extends StatelessWidget{
                 {
                   cubit.changeIndex(index);
                 },
-                backgroundColor: Colors.white,
                 iconSize: 30,
                 elevation: 0.0,
-                selectedItemColor: Colors.blue,
-                unselectedItemColor: Colors.black,
+                // selectedItemColor: Colors.blue,
+                // unselectedItemColor: Colors.black,
                 type: BottomNavigationBarType.fixed,
                 selectedFontSize: 11,
                 unselectedFontSize: 11,
