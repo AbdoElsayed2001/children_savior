@@ -28,26 +28,10 @@ class My_Children extends StatelessWidget {
       body: ListView.builder(
         itemCount: 3,
         itemBuilder: (context, i) {
-          return Container(
-            height: 120,
+          return Card(
+            elevation: 20,
             margin: EdgeInsetsDirectional.only(
                 start: 16, top: 8, end: 16, bottom: 8),
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.shade400,
-                  spreadRadius: 1,
-                  blurRadius: 5,
-                  offset: const Offset(0, 2),
-                ),
-                BoxShadow(
-                  color: Colors.grey.shade300,
-                  offset: const Offset(-2, 0),
-                )
-              ],
-              borderRadius: BorderRadiusDirectional.all(Radius.circular(20)),
-              // color: Colors.blue
-            ),
             child: Row(
               children: [
                 const SizedBox(

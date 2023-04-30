@@ -140,16 +140,21 @@ class _AboutState extends State<About> {
               padding: const EdgeInsets.all(16.0),
               child: ElevatedButton(
                 style: ButtonStyle(
-                  fixedSize: MaterialStateProperty.all(Size(150, 45)),
+                  padding:  MaterialStateProperty.all(const EdgeInsets.symmetric(vertical: 15, horizontal: 20),),
+                  fixedSize: MaterialStateProperty.all(Size(130, 45)),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  ),
                 ),
                 onPressed: () {},
                 child:  Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.call),
+                      Icon(Icons.call,size: 20,),
                       Padding(
-                        padding: const EdgeInsets.all(6.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
                         child: Text("Call",style: TextStyle(fontWeight: FontWeight.bold,
                           fontSize: 16,),),
                       )

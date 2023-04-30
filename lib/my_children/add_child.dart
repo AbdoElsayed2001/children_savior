@@ -53,7 +53,7 @@ class _Add_ChildState extends State<Add_Child> {
                           child: Image.asset("assets/images/picture.png"),
                         ),
                       ),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt,size: 35,color: Colors.blue,))
+                      IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt,size: 35,))
                     ],
                   ),
                 ),
@@ -73,7 +73,7 @@ class _Add_ChildState extends State<Add_Child> {
                           child: Image.asset("assets/images/picture.png"),
                         ),
                       ),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt,size: 35,color: Colors.blue,))
+                      IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt,size: 35,))
                     ],
                   ),
                 ),
@@ -128,7 +128,7 @@ class _Add_ChildState extends State<Add_Child> {
               horizontalTitleGap: 0,
               trailing: IconButton(
                 onPressed: (){},
-                icon: Icon(Icons.bluetooth,color: Colors.blue,),
+                icon: Icon(Icons.bluetooth,),
               ),
             ),
             Padding(
@@ -169,7 +169,12 @@ class _Add_ChildState extends State<Add_Child> {
                 padding: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    fixedSize: MaterialStateProperty.all(Size(150, 45)),
+                    padding:  MaterialStateProperty.all(const EdgeInsets.symmetric(vertical: 15, horizontal: 20),),
+                    fixedSize: MaterialStateProperty.all(Size(130, 45)),
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    ),
                   ),
                   onPressed: () {},
                   child: Text("Add"),

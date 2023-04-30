@@ -33,7 +33,7 @@ class Settings extends StatelessWidget {
                 child: Icon(
                   Icons.settings,
                   size: 88,
-                  color: Colors.blue,
+                  //color: Colors.blue,
                 ),
               ),
               Center(
@@ -59,7 +59,7 @@ class Settings extends StatelessWidget {
                 ),
                 leading: Icon(
                   Icons.language,
-                  color: Colors.black,
+                  //color: Colors.black,
                 ),
                 horizontalTitleGap: 0,
               ),
@@ -73,7 +73,7 @@ class Settings extends StatelessWidget {
                 ),
                 leading: Icon(
                   Icons.dark_mode_outlined,
-                  color: Colors.black,
+                 // color: Colors.black,
                 ),
                 horizontalTitleGap: 0,
               ),
@@ -87,7 +87,7 @@ class Settings extends StatelessWidget {
                 ),
                 leading: Icon(
                   Icons.logout,
-                  color: Colors.black,
+                 // color: Colors.black,
                 ),
                 horizontalTitleGap: 0,
               ),

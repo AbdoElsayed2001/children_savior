@@ -11,7 +11,7 @@ class Edit_Phone extends StatelessWidget {
           icon: Icon(
             size: 26,
             Icons.arrow_back,
-            color: Colors.black,
+            //color: Colors.black,
           ),
           onPressed: () {
             Navigator.of(context).pop();
@@ -40,7 +40,12 @@ class Edit_Phone extends StatelessWidget {
           ),
           ElevatedButton(
             style: ButtonStyle(
-              fixedSize: MaterialStateProperty.all(Size(150, 45)),
+              padding:  MaterialStateProperty.all(const EdgeInsets.symmetric(vertical: 15, horizontal: 20),),
+              fixedSize: MaterialStateProperty.all(Size(130, 45)),
+              shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25),
+              ),
+              ),
             ),
             onPressed: () {},
             child: Text("Save"),

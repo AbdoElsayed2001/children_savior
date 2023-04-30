@@ -147,7 +147,7 @@ class Child_details extends StatelessWidget{
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
-                    color: Colors.black
+                    color: Colors.white
                 ),
               ),
             ),
@@ -171,7 +171,7 @@ class Child_details extends StatelessWidget{
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
-                    color: Colors.black
+                    color: Colors.white
                 ),
               ),
             ),
@@ -217,7 +217,12 @@ class Child_details extends StatelessWidget{
               padding: const EdgeInsets.all(16.0),
               child: ElevatedButton(
                 style: ButtonStyle(
-                  fixedSize: MaterialStateProperty.all(Size(150, 45)),
+                 padding:  MaterialStateProperty.all(const EdgeInsets.symmetric(vertical: 15, horizontal: 20),),
+                  fixedSize: MaterialStateProperty.all(Size(130, 45)),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  ),
                 ),
                 onPressed: () {},
                 child: Text("Delete Child"),

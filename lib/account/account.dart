@@ -21,7 +21,7 @@ class Account extends StatelessWidget {
                       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSufOKKnOlUtMAaD1JNvT56vVKFN6zNhAHZbf5T1bxLh1CDPnjOpRlXyroHTPOh9vwczXs&usqp=CAU"
                       ),
                 ),
-                  IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt,size: 40,color: Colors.blue,))
+                  IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt,size: 40,))
                 ],
               ),
             ),
@@ -41,14 +41,14 @@ class Account extends StatelessWidget {
               ),
               leading: Icon(
                 Icons.account_circle_outlined,
-                color: Colors.black,
+                //color: Colors.black,
               ),
               horizontalTitleGap: 0,
               trailing: IconButton(
                 onPressed: (){
                   Navigator.of(context).pushNamed("edit_name");
                 },
-                  icon: Icon(Icons.edit,color: Colors.blue,),
+                  icon: Icon(Icons.edit,),
               ),
             ),
             ListTile(
@@ -63,14 +63,14 @@ class Account extends StatelessWidget {
               ),
               leading: Icon(
                 Icons.email_outlined,
-                color: Colors.black,
+                //color: Colors.black,
               ),
               horizontalTitleGap: 0,
               trailing: IconButton(
                 onPressed: (){
                   Navigator.of(context).pushNamed("edit_email");
                 },
-                icon: Icon(Icons.edit,color: Colors.blue,),
+                icon: Icon(Icons.edit,),
               ),
             ),
             ListTile(
@@ -80,19 +80,20 @@ class Account extends StatelessWidget {
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
-                      color: Colors.black),
+                      color: Colors.white
+                  ),
                 ),
               ),
               leading: Icon(
                 Icons.phone,
-                color: Colors.black,
+                //color: Colors.black,
               ),
               horizontalTitleGap: 0,
               trailing: IconButton(
                 onPressed: (){
                   Navigator.of(context).pushNamed("edit_phone");
                 },
-                icon: Icon(Icons.edit,color: Colors.blue,),
+                icon: Icon(Icons.edit,),
               ),
             ),
           ],

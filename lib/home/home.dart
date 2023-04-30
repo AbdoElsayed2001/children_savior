@@ -18,14 +18,14 @@ class Home extends StatelessWidget {
                       start: 16, top: 8, end: 16, bottom: 0),
                   decoration: BoxDecoration(
                     image:  DecorationImage(image: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGKikGuo9ITvCvFo497pdDc5AaWYU_qZy7lA&usqp=CAU",),fit: BoxFit.fill),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.shade400,
-                          spreadRadius: 1,
-                          blurRadius: 5,
-                          offset: const Offset(5, 0),
-                        ),
-                      ],
+                      // boxShadow: [
+                      //   BoxShadow(
+                      //     color: Colors.grey.shade400,
+                      //     spreadRadius: 1,
+                      //     blurRadius: 5,
+                      //     offset: const Offset(5, 0),
+                      //   ),
+                      // ],
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20),
@@ -55,16 +55,16 @@ class Home extends StatelessWidget {
                           ),
                           onPressed: () {},
                           child: Container(
-                            decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.shade400,
-                                  spreadRadius: 1,
-                                  blurRadius: 25,
-                                  offset: const Offset(3, 5),
-                                ),
-                              ],
-                            ),
+                            // decoration: BoxDecoration(
+                            //   boxShadow: [
+                            //     BoxShadow(
+                            //       color: Colors.grey.shade400,
+                            //       spreadRadius: 1,
+                            //       blurRadius: 25,
+                            //       offset: const Offset(3, 5),
+                            //     ),
+                            //   ],
+                            // ),
                             child: Image.asset(
                               "assets/images/phone-call.png",
                               height: 30,

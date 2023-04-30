@@ -69,13 +69,13 @@ class MyApp extends StatelessWidget {
       ),
       darkTheme: ThemeData(
         //primarySwatch: HexColor("007acc"),
-        scaffoldBackgroundColor: HexColor("1e1e1e"),
+        scaffoldBackgroundColor: HexColor("18191a"),
         appBarTheme: AppBarTheme(
           systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: HexColor("252526"),
+            statusBarColor: HexColor("18191a"),
             statusBarIconBrightness: Brightness.light,
           ),
-          backgroundColor: HexColor("1e1e1e"),
+          backgroundColor: HexColor("18191a"),
           elevation: 0.0,
           titleTextStyle: TextStyle(
             fontWeight: FontWeight.bold, color: Colors.white, fontSize: 24,fontStyle: FontStyle.italic,
@@ -88,9 +88,19 @@ class MyApp extends StatelessWidget {
             color: HexColor("007acc"),
         ),
         listTileTheme: ListTileThemeData(
-          iconColor: Colors.white,
+          iconColor: HexColor("007acc"),
 
         ),
+        // elevatedButtonTheme: ElevatedButtonThemeData(
+        //   style: ButtonStyle(
+        //     backgroundColor:
+        //     MaterialStateProperty.all(HexColor("3a3b3c")),
+        //   )
+        // ),
+        cardTheme: CardTheme(
+          color: HexColor("242526")
+        ),
+        shadowColor: Color(0x000000),
         floatingActionButtonTheme: FloatingActionButtonThemeData(
           backgroundColor: HexColor("007acc"),
         ),
@@ -99,13 +109,13 @@ class MyApp extends StatelessWidget {
           selectedItemColor: HexColor("007acc"),
           unselectedItemColor: Colors.grey,
           elevation: 20.0,
-          backgroundColor: HexColor("1e1e1e"),
+          backgroundColor: HexColor("18191a"),
         ),
         textTheme: TextTheme(
           bodyText1: TextStyle(),
         ),
       ),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       home: SplashScreen(),
