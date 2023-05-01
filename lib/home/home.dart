@@ -12,10 +12,10 @@ class Home extends StatelessWidget {
             return Column(
               children: [
                 Container(
-                  height: 160,
+                  height: 180,
                   width: double.infinity,
                   margin: EdgeInsetsDirectional.only(
-                      start: 16, top: 8, end: 16, bottom: 0),
+                      start: 16, top: 0, end: 16, bottom: 0),
                   decoration: BoxDecoration(
                     image:  DecorationImage(image: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGKikGuo9ITvCvFo497pdDc5AaWYU_qZy7lA&usqp=CAU",),fit: BoxFit.fill),
                       // boxShadow: [
@@ -32,7 +32,7 @@ class Home extends StatelessWidget {
                         bottomLeft: Radius.zero,
                         bottomRight: Radius.zero,
                       ),
-                      color: Colors.blue
+                     // color: Colors.blue
                   ),
                 ),
                 Row(
@@ -94,17 +94,17 @@ class Home extends StatelessWidget {
                             Navigator.of(context).pushNamed("about");
                           },
                           child: Container(
-                            decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.shade400,
-                                  spreadRadius: 1,
-                                  blurRadius: 25,
-                                  offset: const Offset(3, 5),
-                                ),
-                              ],
-
-                            ),
+                            // decoration: BoxDecoration(
+                            //   boxShadow: [
+                            //     BoxShadow(
+                            //       color: Colors.grey.shade400,
+                            //       spreadRadius: 1,
+                            //       blurRadius: 25,
+                            //       offset: const Offset(3, 5),
+                            //     ),
+                            //   ],
+                            //
+                            // ),
                             child: Image.asset(
                               "assets/images/about-xxl.png",
                               height: 30,

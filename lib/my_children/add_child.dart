@@ -27,7 +27,7 @@ class _Add_ChildState extends State<Add_Child> {
         ),
         title: Text(
           "Add child",
-          style: TextStyle(color: Colors.black, fontSize: 21),
+          style: Theme.of(context).textTheme.headline6,
         ),
       ),
       body: SingleChildScrollView(
@@ -86,7 +86,7 @@ class _Add_ChildState extends State<Add_Child> {
               padding: const EdgeInsets.symmetric(vertical: 4,horizontal: 16),
               child: TextFormField(
                 decoration: InputDecoration(
-                    label: Text("Name"), border: OutlineInputBorder()),
+                    label: Text("Name",style: Theme.of(context).textTheme.caption,), border: OutlineInputBorder()),
                 keyboardType: TextInputType.name,
               ),
             ),
@@ -118,11 +118,7 @@ class _Add_ChildState extends State<Add_Child> {
               title: RichText(
                 text: TextSpan(
                   text: "Connect Location",
-                  style: TextStyle(
-                     // fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                      color: Colors.black54
-                  ),
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
               ),
               horizontalTitleGap: 0,
@@ -133,14 +129,13 @@ class _Add_ChildState extends State<Add_Child> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 4,horizontal: 16),
-              child: Text("Gender",style: TextStyle(//fontWeight: FontWeight.bold,
-                color: Colors.black54,fontSize: 16,),),
+              child: Text("Gender",style: Theme.of(context).textTheme.bodyText1,),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 16),
               child: RadioListTile(
                 contentPadding: EdgeInsetsGeometry.lerp(EdgeInsets.all(0),EdgeInsets.all(0) , 0),
-                title: Text("Male",style: TextStyle(color: Colors.black54),),
+                title: Text("Male",style:Theme.of(context).textTheme.caption,),
                 value: "male",
                 groupValue: gender,
                 onChanged: (value){
@@ -154,7 +149,7 @@ class _Add_ChildState extends State<Add_Child> {
               padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 16),
               child: RadioListTile(
                 contentPadding: EdgeInsetsGeometry.lerp(EdgeInsets.all(0),EdgeInsets.all(0) , 0),
-                title: Text("Female",style: TextStyle(color: Colors.black54)),
+                title: Text("Female",style: Theme.of(context).textTheme.caption,),
                 value: "female",
                 groupValue: gender,
                 onChanged: (value){

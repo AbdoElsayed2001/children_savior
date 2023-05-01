@@ -60,7 +60,30 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.white,
         ),
         textTheme: TextTheme(
-          bodyText1: TextStyle(),
+          bodyText1: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+          ),
+          bodyText2: TextStyle(
+            color: Colors.blue,
+            fontSize: 14,
+          ),
+          caption: TextStyle(
+            color: Colors.black,
+            fontSize: 14,
+          ),
+          headline6: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
+          headline1: TextStyle(
+              color: Colors.blue,
+              fontWeight: FontWeight.bold,
+              fontSize: 28,
+              fontStyle: FontStyle.italic
+          ),
         ),
       ),
       darkTheme: ThemeData(
@@ -85,14 +108,25 @@ class MyApp extends StatelessWidget {
         ),
         listTileTheme: ListTileThemeData(
           iconColor: HexColor("007acc"),
-
         ),
-        // elevatedButtonTheme: ElevatedButtonThemeData(
-        //   style: ButtonStyle(
-        //     backgroundColor:
-        //     MaterialStateProperty.all(HexColor("3a3b3c")),
-        //   )
-        // ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor:
+            MaterialStateProperty.all(HexColor("007acc")),
+          )
+        ),
+        indicatorColor: HexColor("007acc"),
+        inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.white,
+            ),
+          ),
+          labelStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 14,
+          ),
+        ),
         cardTheme: CardTheme(
           color: HexColor("242526")
         ),
@@ -107,11 +141,14 @@ class MyApp extends StatelessWidget {
           elevation: 20.0,
           backgroundColor: HexColor("18191a"),
         ),
+        radioTheme: RadioThemeData(
+          fillColor: MaterialStateProperty.all(HexColor("007acc")),
+        ),
         textTheme: TextTheme(
           bodyText1: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
-            fontSize: 18,
+            fontSize: 16,
           ),
           bodyText2: TextStyle(
             color: HexColor("007acc"),

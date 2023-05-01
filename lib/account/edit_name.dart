@@ -20,7 +20,7 @@ class Edit_Name extends StatelessWidget {
         ),
         title: Text(
           "Edit Name",
-          style: TextStyle(color: Colors.black, fontSize: 21),
+          style: Theme.of(context).textTheme.headline6,
         ),
       ),
       body: Column(

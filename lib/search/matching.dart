@@ -19,7 +19,7 @@ class Matching extends StatelessWidget{
         ),
         title: Text(
           "Matching",
-          style: TextStyle(color: Colors.black, fontSize: 21),
+          style: Theme.of(context).textTheme.headline6,
         ),
       ),
       body: Column(
@@ -28,9 +28,7 @@ class Matching extends StatelessWidget{
             padding: const EdgeInsets.only(top : 20.0,bottom: 20),
             child: Text(
               "Your info is matching with this child",
-            style: TextStyle(  fontWeight: FontWeight.bold,
-            fontSize: 18,
-            color: Colors.black),
+            style: Theme.of(context).textTheme.bodyText1,
             ),
           ),
       Center(
@@ -42,14 +40,14 @@ class Matching extends StatelessWidget{
           margin: EdgeInsetsDirectional.only(
               start: 16, top: 8, end: 16, bottom: 0),
           decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.shade400,
-                  spreadRadius: 1,
-                  blurRadius: 5,
-                  offset: const Offset(5, 0),
-                ),
-              ],
+              // boxShadow: [
+              //   BoxShadow(
+              //     color: Colors.grey.shade400,
+              //     spreadRadius: 1,
+              //     blurRadius: 5,
+              //     offset: const Offset(5, 0),
+              //   ),
+              // ],
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20),
                 topRight: Radius.circular(20),
@@ -87,16 +85,16 @@ class Matching extends StatelessWidget{
                   ),
                   onPressed: () {},
                   child: Container(
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.shade400,
-                          spreadRadius: 1,
-                          blurRadius: 25,
-                          offset: const Offset(3, 5),
-                        ),
-                      ],
-                    ),
+                    // decoration: BoxDecoration(
+                    //   boxShadow: [
+                    //     BoxShadow(
+                    //       color: Colors.grey.shade400,
+                    //       spreadRadius: 1,
+                    //       blurRadius: 25,
+                    //       offset: const Offset(3, 5),
+                    //     ),
+                    //   ],
+                    // ),
                     child: Image.asset(
                       "assets/images/phone-call.png",
                       height: 30,
@@ -126,16 +124,16 @@ class Matching extends StatelessWidget{
                     Navigator.of(context).pushNamed("about");
                   },
                   child: Container(
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.shade400,
-                          spreadRadius: 1,
-                          blurRadius: 25,
-                          offset: const Offset(3, 5),
-                        ),
-                      ],
-                    ),
+                    // decoration: BoxDecoration(
+                    //   boxShadow: [
+                    //     BoxShadow(
+                    //       color: Colors.grey.shade400,
+                    //       spreadRadius: 1,
+                    //       blurRadius: 25,
+                    //       offset: const Offset(3, 5),
+                    //     ),
+                    //   ],
+                    // ),
                     child: Image.asset(
 
                       "assets/images/about-xxl.png",

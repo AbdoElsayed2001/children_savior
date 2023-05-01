@@ -29,7 +29,7 @@ class My_Children extends StatelessWidget {
         itemCount: 3,
         itemBuilder: (context, i) {
           return Card(
-            elevation: 20,
+            elevation: 10,
             margin: EdgeInsetsDirectional.only(
                 start: 16, top: 8, end: 16, bottom: 8),
             child: Row(
