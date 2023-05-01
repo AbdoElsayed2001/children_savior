@@ -18,7 +18,7 @@ class Child_details extends StatelessWidget{
         ),
         title: Text(
           "Child details",
-          style: TextStyle(color: Colors.black, fontSize: 21),
+          style: Theme.of(context).textTheme.headline6,
         ),
       ),
       body: Column(
@@ -72,12 +72,8 @@ class Child_details extends StatelessWidget{
             title: RichText(
               text: TextSpan(
                 text: "Amira Ahmed",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                    color: Colors.black
-                ),
-              ),
+                style:Theme.of(context).textTheme.bodyText1,
+            ),
             ),
             leading: Icon(
               Icons.account_circle_outlined,
@@ -96,11 +92,7 @@ class Child_details extends StatelessWidget{
             title: RichText(
               text: TextSpan(
                 text: "Mansoura",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                    color: Colors.black
-                ),
+                style: Theme.of(context).textTheme.bodyText1,
               ),
             ),
             leading: Icon(
@@ -120,11 +112,7 @@ class Child_details extends StatelessWidget{
             title: RichText(
               text: TextSpan(
                 text: "8 years old",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                    color: Colors.black
-                ),
+                style: Theme.of(context).textTheme.bodyText1,
               ),
             ),
             leading: Icon(
@@ -144,11 +132,7 @@ class Child_details extends StatelessWidget{
             title: RichText(
               text: TextSpan(
                 text: "01020304050",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                    color: Colors.white
-                ),
+                style: Theme.of(context).textTheme.bodyText1,
               ),
             ),
             leading: Icon(
@@ -168,11 +152,7 @@ class Child_details extends StatelessWidget{
             title: RichText(
               text: TextSpan(
                 text: "Female",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                    color: Colors.white
-                ),
+                style: Theme.of(context).textTheme.bodyText1,
               ),
             ),
             leading: Icon(
@@ -193,11 +173,7 @@ class Child_details extends StatelessWidget{
               title: RichText(
                 text: TextSpan(
                   text: "GPS",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                      color: Colors.black
-                  ),
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
               ),
               leading: Icon(

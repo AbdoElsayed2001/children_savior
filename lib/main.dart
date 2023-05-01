@@ -112,7 +112,16 @@ class MyApp extends StatelessWidget {
           backgroundColor: HexColor("18191a"),
         ),
         textTheme: TextTheme(
-          bodyText1: TextStyle(),
+          bodyText1: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+          ),
+          headline6: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
         ),
       ),
       themeMode: ThemeMode.dark,
