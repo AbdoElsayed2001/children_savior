@@ -32,11 +32,7 @@ class Account extends StatelessWidget {
               title: RichText(
                 text: TextSpan(
                   text: "Ahmed Mohamed",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                      color: Colors.black
-                  ),
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
               ),
               leading: Icon(
@@ -55,10 +51,7 @@ class Account extends StatelessWidget {
               title: RichText(
                 text: TextSpan(
                   text: "ahmed@gmail.com",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                      color: Colors.black),
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
               ),
               leading: Icon(
@@ -77,11 +70,7 @@ class Account extends StatelessWidget {
               title: RichText(
                 text: TextSpan(
                   text: "01020304102",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                      color: Colors.white
-                  ),
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
               ),
               leading: Icon(

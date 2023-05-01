@@ -28,7 +28,7 @@ class _AboutState extends State<About> {
         ),
         title: Text(
           "About",
-          style: TextStyle(color: Colors.black, fontSize: 21),
+          style: Theme.of(context).textTheme.headline6,
         ),
       ),
       body: Column(
@@ -105,34 +105,28 @@ class _AboutState extends State<About> {
         ),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text("Information:",style: TextStyle(  fontWeight: FontWeight.bold,
-                fontSize: 18,
-                color: Colors.black),),
+            child: Text("Information:",style: Theme.of(context).textTheme.bodyText1,),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Text("i found this child in Ahmed Maher Street she say her name is Amira if anyone know her please call me"),
+            child: Text("i found this child in Ahmed Maher Street she say her name is Amira if anyone know her please call me",style: Theme.of(context).textTheme.caption,),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text("Location:",style: TextStyle(  fontWeight: FontWeight.bold,
-                fontSize: 18,
-                color: Colors.black),),
+            child: Text("Location:",style: Theme.of(context).textTheme.bodyText1,),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Text("Mansoura,Ahmed Maher Street"),
+            child: Text("Mansoura,Ahmed Maher Street",style: Theme.of(context).textTheme.caption,),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text("Phone:",style: TextStyle(  fontWeight: FontWeight.bold,
-                fontSize: 18,
-                color: Colors.black),),
+            child: Text("Phone:",style: Theme.of(context).textTheme.bodyText1,),
           ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text("01020304050"),
+              child: Text("01020304050",style: Theme.of(context).textTheme.caption,),
             ),
           ),
           Center(

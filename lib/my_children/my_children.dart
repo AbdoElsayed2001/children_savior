@@ -53,13 +53,13 @@ class My_Children extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text("Amira Ahmed",
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+                        style: Theme.of(context).textTheme.bodyText1,),
                       TextButton(
                         onPressed: (){
                           Navigator.of(context).pushNamed("child_details");
                         },
                         child: Text("details..",
-                          style: TextStyle(fontSize: 14, ),),
+                          style: Theme.of(context).textTheme.bodyText2,),
                       ),
                     ],
                   ),

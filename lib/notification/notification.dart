@@ -18,17 +18,14 @@ class AppNotifications extends StatelessWidget{
         ),
         title: Text(
           "Notifications",
-          style: TextStyle(color: Colors.black, fontSize: 21),
+          style: Theme.of(context).textTheme.headline6,
         ),
       ),
       body: Container(
         child: Center(
           child: Text(
             "No notifications yet",
-            style: TextStyle(color: Colors.black26,
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-            ),
+            style: Theme.of(context).textTheme.caption,
           ),
         ),
       ),

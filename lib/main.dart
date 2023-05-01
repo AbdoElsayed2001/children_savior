@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:hexcolor/hexcolor.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:kids_savior/account/edit_email.dart';
 import 'package:kids_savior/account/edit_name.dart';
 import 'package:kids_savior/account/edit_phone.dart';
 import 'package:kids_savior/auth/splash.dart';
-import 'package:kids_savior/bottomNavBar/bottom_nav_screen.dart';
 import 'package:kids_savior/home/about.dart';
 import 'package:kids_savior/my_children/add_child.dart';
 import 'package:kids_savior/my_children/child_details.dart';
@@ -32,7 +29,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: AppBarTheme(
-          backwardsCompatibility: false,
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: Colors.white,
             statusBarIconBrightness: Brightness.dark,
@@ -115,12 +111,26 @@ class MyApp extends StatelessWidget {
           bodyText1: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
-            fontSize: 16,
+            fontSize: 18,
+          ),
+          bodyText2: TextStyle(
+            color: HexColor("007acc"),
+            fontSize: 14,
+          ),
+          caption: TextStyle(
+            color: Colors.white,
+            fontSize: 14,
           ),
           headline6: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
             fontSize: 20,
+          ),
+          headline1: TextStyle(
+            color: HexColor("007acc"),
+            fontWeight: FontWeight.bold,
+            fontSize: 28,
+            fontStyle: FontStyle.italic
           ),
         ),
       ),

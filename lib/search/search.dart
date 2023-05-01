@@ -15,10 +15,7 @@ class Search extends StatelessWidget{
         child: Center(
           child: Text(
             "Add some pictures for the child to identify him",
-            style: TextStyle(color: Colors.black26,
-            fontWeight: FontWeight.bold,
-              fontSize: 15,
-            ),
+            style: Theme.of(context).textTheme.caption,
           ),
         ),
       ),

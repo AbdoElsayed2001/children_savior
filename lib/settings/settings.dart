@@ -18,7 +18,7 @@ class Settings extends StatelessWidget {
         ),
         title: Text(
           "Settings",
-          style: TextStyle(color: Colors.black, fontSize: 21),
+          style: Theme.of(context).textTheme.headline6,
         ),
       ),
       body: SafeArea(
@@ -39,11 +39,7 @@ class Settings extends StatelessWidget {
               Center(
                 child: Text(
                   "Settings",
-                  style: TextStyle(
-                      color: Colors.blue,
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      fontStyle: FontStyle.italic),
+                  style: Theme.of(context).textTheme.headline1,
                 ),
               ),
               const SizedBox(
@@ -52,10 +48,7 @@ class Settings extends StatelessWidget {
               ListTile(
                 title: Text(
                   "Language",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black),
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
                 leading: Icon(
                   Icons.language,
@@ -66,10 +59,7 @@ class Settings extends StatelessWidget {
               ListTile(
                 title: Text(
                   "Dark Mode",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black),
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
                 leading: Icon(
                   Icons.dark_mode_outlined,
@@ -80,10 +70,7 @@ class Settings extends StatelessWidget {
               ListTile(
                 title: Text(
                   "Log Out",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black),
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
                 leading: Icon(
                   Icons.logout,
