@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kids_savior/cubit/cubit.dart';
 
 class Settings extends StatelessWidget {
   @override
@@ -64,6 +65,12 @@ class Settings extends StatelessWidget {
                 leading: Icon(
                   Icons.dark_mode_outlined,
                  // color: Colors.black,
+                ),
+                trailing: IconButton(
+                    onPressed: (){
+                      AppCubit.get(context).changeAppMode();
+                    },
+                    icon: Icon(Icons.brightness_4_outlined,),
                 ),
                 horizontalTitleGap: 0,
               ),
