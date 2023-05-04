@@ -64,7 +64,7 @@ class MapsState extends State<Maps> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          _kGooglePlex == null ? Center(child: CircularProgressIndicator(color: Colors.blue),) :
+          _kGooglePlex == null ? Center(child: CircularProgressIndicator(),) :
           Expanded(
             child: GoogleMap(
               mapType: MapType.normal,

@@ -79,6 +79,9 @@ class MyApp extends StatelessWidget {
             floatingActionButtonTheme: FloatingActionButtonThemeData(
               backgroundColor: Colors.blue,
             ),
+            progressIndicatorTheme: ProgressIndicatorThemeData(
+              color: Colors.blue,
+            ),
             bottomNavigationBarTheme: BottomNavigationBarThemeData(
               type: BottomNavigationBarType.fixed,
               selectedItemColor: Colors.blue,
@@ -148,7 +151,9 @@ class MyApp extends StatelessWidget {
                   MaterialStateProperty.all(HexColor("282828")),
                 )
             ),
-            indicatorColor: HexColor("007acc"),
+            progressIndicatorTheme: ProgressIndicatorThemeData(
+              color: HexColor("007acc"),
+            ),
             inputDecorationTheme: InputDecorationTheme(
               border: OutlineInputBorder(
                 borderSide: BorderSide(
