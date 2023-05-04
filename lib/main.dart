@@ -211,7 +211,7 @@ class MyApp extends StatelessWidget {
           ),
           themeMode: AppCubit.get(context).isDark! ? ThemeMode.dark : ThemeMode.light,
           debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
+          title: 'Children Savior',
           home: SplashScreen(),
 
           routes: {
