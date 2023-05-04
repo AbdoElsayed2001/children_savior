@@ -1,3 +1,5 @@
+//import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -41,12 +43,12 @@ class Home extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(
                             left: 16.0, top: 0, right: 0, bottom: 16),
-                        child: ElevatedButton(
+                        child: OutlinedButton(
                           style: ButtonStyle(
                             fixedSize:
                                 MaterialStateProperty.all(Size.fromHeight(50)),
-                            backgroundColor:
-                                MaterialStateProperty.all(Colors.white),
+                            // backgroundColor:
+                            //     MaterialStateProperty.all(Colors.white),
                             shape: MaterialStateProperty.all(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.only(
@@ -78,12 +80,12 @@ class Home extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(
                             left: 0, top: 0, right: 16, bottom: 16),
-                        child: ElevatedButton(
+                        child: OutlinedButton(
                           style: ButtonStyle(
                             fixedSize:
                                 MaterialStateProperty.all(Size.fromHeight(50)),
-                            backgroundColor:
-                                MaterialStateProperty.all(Colors.white),
+                            // backgroundColor:
+                            //     MaterialStateProperty.all(Colors.white),
                             shape: MaterialStateProperty.all(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.only(

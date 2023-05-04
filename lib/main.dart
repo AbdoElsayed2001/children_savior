@@ -25,7 +25,7 @@ void main() async
 
   bool? isDark = CacheHelper.getBoolean(Key: "isDark");
 
-  runApp( MyApp(isDark!));
+  runApp(MyApp(isDark ?? true));
 }
 
 class MyApp extends StatelessWidget {
@@ -69,6 +69,12 @@ class MyApp extends StatelessWidget {
             listTileTheme: ListTileThemeData(
               iconColor: Colors.blue,
 
+            ),
+            outlinedButtonTheme: OutlinedButtonThemeData(
+              style: ButtonStyle(
+                backgroundColor:
+                   MaterialStateProperty.all(Colors.white),
+              )
             ),
             floatingActionButtonTheme: FloatingActionButtonThemeData(
               backgroundColor: Colors.blue,
@@ -136,6 +142,12 @@ class MyApp extends StatelessWidget {
                   MaterialStateProperty.all(HexColor("007acc")),
                 )
             ),
+            outlinedButtonTheme: OutlinedButtonThemeData(
+                style: ButtonStyle(
+                  backgroundColor:
+                  MaterialStateProperty.all(HexColor("282828")),
+                )
+            ),
             indicatorColor: HexColor("007acc"),
             inputDecorationTheme: InputDecorationTheme(
               border: OutlineInputBorder(
@@ -149,7 +161,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
             cardTheme: CardTheme(
-                color: HexColor("242526")
+                color: HexColor("282828")
             ),
             shadowColor: Color(0x000000),
             floatingActionButtonTheme: FloatingActionButtonThemeData(
