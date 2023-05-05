@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kids_savior/home/pageView_model.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class About extends StatefulWidget{
   @override
@@ -7,6 +8,7 @@ class About extends StatefulWidget{
 }
 
 class _AboutState extends State<About> {
+  final number = '+201091046720';
   final controller = OnBoardingController();
 
   late TabController _tabController;
@@ -126,7 +128,7 @@ class _AboutState extends State<About> {
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text("01020304050",style: Theme.of(context).textTheme.caption,),
+              child: Text("$number",style: Theme.of(context).textTheme.caption,),
             ),
           ),
           Center(
@@ -141,7 +143,9 @@ class _AboutState extends State<About> {
                   ),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  launch('tel://$number');
+                },
                 child:  Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
