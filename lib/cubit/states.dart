@@ -5,3 +5,4 @@ class AppInitialState extends AppStates {}
 class AppBottomNavBarStates extends AppStates {}
 
 class AppChangModeStates extends AppStates {}
+

@@ -11,6 +11,8 @@ class ResetPassBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var passwordController = TextEditingController();
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
@@ -18,11 +20,35 @@ class ResetPassBody extends StatelessWidget {
           const Spacer(),
           const HeaderTitle(title: 'Reset Password ?'),
           const SizedBox(height: 16),
-          AuthField(hintText: 'Code', border: border),
+          AuthField(  controller: passwordController,
+            validation: (String? value ){
+              if (value!.isEmpty){
+                return 'password is too short ';
+              }
+            },
+            label: 'Password',
+            type: TextInputType.visiblePassword,
+          ),
           const SizedBox(height: 16),
-          AuthField(hintText: 'Password', border: border),
+          AuthField( controller: passwordController,
+            validation: (String? value ){
+              if (value!.isEmpty){
+                return 'password is too short ';
+              }
+            },
+            label: 'Password',
+            type: TextInputType.visiblePassword,
+          ),
           const SizedBox(height: 16),
-          AuthField(hintText: 'Confirm Password', border: border),
+          AuthField( controller: passwordController,
+            validation: (String? value ){
+              if (value!.isEmpty){
+                return 'password is too short ';
+              }
+            },
+            label: 'Password',
+            type: TextInputType.visiblePassword,
+          ),
           const SizedBox(height: 16),
           const SizedBox(height: 40),
           AuthBtn(

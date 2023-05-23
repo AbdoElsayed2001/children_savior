@@ -12,6 +12,8 @@ class ForgotBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var emailController = TextEditingController();
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
@@ -32,7 +34,16 @@ class ForgotBody extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          AuthField(hintText: 'Email', border: border),
+          AuthField(controller: emailController,
+            validation: (String? value ){
+              if (value!.isEmpty){
+                return 'email is not correct';
+              }
+
+            },
+            label: 'Password',
+            type: TextInputType.visiblePassword,
+          ),
           const SizedBox(height: 50),
           AuthBtn(
             onPressed: () => Get.to(() => const ResetScreen()),

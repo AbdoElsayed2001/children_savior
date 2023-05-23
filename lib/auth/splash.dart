@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kids_savior/auth/login/login_body.dart';
 
 import '../app_images.dart';
 import 'login/login.dart';
@@ -17,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Future.delayed(
       const Duration(milliseconds: 3000),
-      () => Get.offAll(const LoginScreen()),
+      () => Get.offAll(LoginScreen()),
     );
     super.initState();
   }
