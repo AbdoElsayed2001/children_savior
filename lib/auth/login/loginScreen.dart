@@ -74,9 +74,7 @@ class LoginScreen extends StatelessWidget
                               password: passwordController.text,
                             );
                           }
-                          else {
-                            print("error");
-                          }
+                          Get.to(const ForgotScreen());
                         },
                       ),
                       fallback: (context)=> Center(child: CircularProgressIndicator()),

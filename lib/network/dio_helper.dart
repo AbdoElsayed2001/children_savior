@@ -9,7 +9,7 @@ class DioHelper
   BaseOptions? init (){
     dio = Dio(
       BaseOptions(
-        baseUrl: "https://kids-saviour.megaa-soft.com/api/login",
+        baseUrl: "https://kids-saviour.megaa-soft.com/api/",
         receiveDataWhenStatusError : true,
         headers: {
           'Accept' : 'application/json',
