@@ -1,8 +1,15 @@
+import 'package:kids_savior/models/login_model.dart';
+
 abstract class LoginStates {}
 
 class LoginInitialState extends LoginStates {}
 
-class LoginSuccessState extends LoginStates {}
+class LoginSuccessState extends LoginStates {
+
+  final LoginModel loginModel;
+
+  LoginSuccessState(this.loginModel);
+}
 
 class LoginErrorState extends LoginStates
 {

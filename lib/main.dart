@@ -12,18 +12,24 @@ import 'package:kids_savior/home/about.dart';
 import 'package:kids_savior/my_children/add_child.dart';
 import 'package:kids_savior/my_children/child_details.dart';
 import 'package:kids_savior/network/cache_helper.dart';
+import 'package:kids_savior/network/dio_helper.dart';
 import 'package:kids_savior/notification/notification.dart';
 import 'package:kids_savior/search/matching.dart';
 import 'package:kids_savior/settings/settings.dart';
 import 'package:get/get.dart';
 
+import 'bottomNavBar/bottom_nav_screen.dart';
+
 
 void main() async
 {
+  //Bloc.observer = M
+  await DioHelper.init();
+
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper.int();
 
-  bool? isDark = CacheHelper.getBoolean(Key: "isDark");
+  bool? isDark = CacheHelper.getBoolean(key: "isDark");
 
   runApp(MyApp(isDark ?? true));
 }
@@ -241,6 +247,9 @@ class MyApp extends StatelessWidget {
             },
             "matching": (context) {
               return Matching();
+            },
+            "bottomNavScreen": (context) {
+              return BottomNavScreen();
             },
           },
         );

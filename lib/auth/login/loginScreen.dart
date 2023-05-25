@@ -1,8 +1,11 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:kids_savior/bottomNavBar/bottom_nav_screen.dart';
+import 'package:kids_savior/network/cache_helper.dart';
 
 import '../forgot_pass/forgot_pass.dart';
 import '../regester/register.dart';
@@ -24,7 +27,50 @@ class LoginScreen extends StatelessWidget
     return BlocProvider(
       create: (BuildContext context) => LoginCubit(),
       child: BlocConsumer<LoginCubit,LoginStates>(
-        listener: (context,state) {} ,
+        listener: (context,state) {
+          if (state is LoginSuccessState)
+            {
+              if (state.loginModel.status)
+                {
+                  //print(state.loginModel.message);
+                  //print(state.loginModel.data.token);
+
+                  print("نماااااااااااااااام");
+
+                  // Fluttertoast.showToast(
+                  //     msg: state.loginModel.message,
+                  //     toastLength: Toast.LENGTH_SHORT,
+                  //     gravity: ToastGravity.BOTTOM,
+                  //     timeInSecForIosWeb: 1,
+                  //     backgroundColor: Colors.green,
+                  //     textColor: Colors.white,
+                  //     fontSize: 16.0
+                  // );
+
+                  CacheHelper.saveData(
+                      key: 'token',
+                      value: state.loginModel.data.token).then((value)
+                  {
+                    Navigator.of(context).pushNamed("bottomNavScreen");
+                  }
+                  );
+
+                }else
+                  {
+                    print(state.loginModel.message);
+
+                    Fluttertoast.showToast(
+                        msg: state.loginModel.message,
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.BOTTOM,
+                        timeInSecForIosWeb: 1,
+                        backgroundColor: Colors.red,
+                        textColor: Colors.white,
+                        fontSize: 16.0
+                    );
+                  }
+            }
+        } ,
         builder:  (context , state)
         {
           return AuthBack(
@@ -74,7 +120,6 @@ class LoginScreen extends StatelessWidget
                               password: passwordController.text,
                             );
                           }
-                          Get.to(const ForgotScreen());
                         },
                       ),
                       fallback: (context)=> Center(child: CircularProgressIndicator()),

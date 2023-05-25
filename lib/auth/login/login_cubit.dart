@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kids_savior/models/login_model.dart';
 
 import '../../network/dio_helper.dart';
 import 'login_states.dart';
@@ -10,6 +11,8 @@ class LoginCubit extends Cubit <LoginStates>
 
   static LoginCubit get(context) => BlocProvider.of(context);
 
+  LoginModel? loginModel;
+
   void userLogin({
     required String email,
     required String password,
@@ -17,7 +20,7 @@ class LoginCubit extends Cubit <LoginStates>
     emit(LoginLoadingState());
 
     DioHelper.postData(
-      url: "https://kids-saviour.megaa-soft.com/api/login",
+      url: "login",
       data: {
         'email' : email,
         'password' : password,
@@ -25,7 +28,9 @@ class LoginCubit extends Cubit <LoginStates>
     ).then((value)
     {
       print(value.data);
-      emit(LoginSuccessState());
+     loginModel = LoginModel.fromJson(value.data);
+
+      emit(LoginSuccessState(loginModel!));
     }).catchError((error){
       emit(LoginErrorState(error.toString()));
     });

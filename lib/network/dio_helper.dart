@@ -6,7 +6,7 @@ class DioHelper
 {
   static Dio? dio;
 
-  BaseOptions? init (){
+  static init (){
     dio = Dio(
       BaseOptions(
         baseUrl: "https://kids-saviour.megaa-soft.com/api/",
