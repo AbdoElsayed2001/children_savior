@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,6 +7,7 @@ import 'package:kids_savior/account/edit_email.dart';
 import 'package:kids_savior/account/edit_name.dart';
 import 'package:kids_savior/account/edit_phone.dart';
 import 'package:kids_savior/auth/splash.dart';
+import 'package:kids_savior/bloc_observer/bloc_observer.dart';
 import 'package:kids_savior/cubit/cubit.dart';
 import 'package:kids_savior/cubit/states.dart';
 import 'package:kids_savior/home/about.dart';
@@ -23,11 +25,11 @@ import 'bottomNavBar/bottom_nav_screen.dart';
 
 void main() async
 {
-  //Bloc.observer = M
+  Bloc.observer = MyBlocObserver();
   await DioHelper.init();
 
   WidgetsFlutterBinding.ensureInitialized();
-  await CacheHelper.int();
+  await CacheHelper.init();
 
   bool? isDark = CacheHelper.getBoolean(key: "isDark");
 
@@ -38,7 +40,6 @@ class MyApp extends StatelessWidget {
  // const MyApp({Key? key}) : super(key: key);
 
   final bool isDark;
-
   MyApp(this.isDark);
 
 

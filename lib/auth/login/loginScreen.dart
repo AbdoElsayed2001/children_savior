@@ -30,12 +30,11 @@ class LoginScreen extends StatelessWidget
         listener: (context,state) {
           if (state is LoginSuccessState)
             {
+              print("نماااااااااااااااام");
               if (state.loginModel.status)
                 {
-                  //print(state.loginModel.message);
-                  //print(state.loginModel.data.token);
-
-                  print("نماااااااااااااااام");
+                  print(state.loginModel.message);
+                  print(state.loginModel.data.access_token);
 
                   // Fluttertoast.showToast(
                   //     msg: state.loginModel.message,
@@ -49,7 +48,7 @@ class LoginScreen extends StatelessWidget
 
                   CacheHelper.saveData(
                       key: 'token',
-                      value: state.loginModel.data.token).then((value)
+                      value: state.loginModel.data.access_token).then((value)
                   {
                     Navigator.of(context).pushNamed("bottomNavScreen");
                   }
