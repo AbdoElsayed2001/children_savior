@@ -26,10 +26,10 @@ import 'bottomNavBar/bottom_nav_screen.dart';
 void main() async
 {
   Bloc.observer = MyBlocObserver();
-  await DioHelper.init();
 
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper.init();
+  await DioHelper.init();
 
   bool? isDark = CacheHelper.getBoolean(key: "isDark");
 

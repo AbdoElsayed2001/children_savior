@@ -11,14 +11,14 @@ class LoginCubit extends Cubit <LoginStates>
 
   static LoginCubit get(context) => BlocProvider.of(context);
 
-  LoginModel? loginModel;
+  late LoginModel loginModel;
 
   void userLogin({
     required String email,
     required String password,
-  }) {
+  })
+  {
     emit(LoginLoadingState());
-
     DioHelper.postData(
       url: "login",
       data: {
@@ -27,14 +27,18 @@ class LoginCubit extends Cubit <LoginStates>
       },
     ).then((value)
     {
+       print(value.data);
 
-      print(value.data);
-     loginModel = LoginModel.fromJson(value.data);
-     print(loginModel!.status);
+       loginModel = LoginModel.fromJson(value.data);
+       // print(loginModel.status);
+       // print(loginModel.message);
+       // print(loginModel.data.address);
 
-      emit(LoginSuccessState(loginModel!));
+       emit(LoginSuccessState(loginModel));
+
     }).catchError((error){
       emit(LoginErrorState(error.toString()));
+      print(error.toString());
     });
   }
 }

@@ -4,6 +4,8 @@ abstract class LoginStates {}
 
 class LoginInitialState extends LoginStates {}
 
+class LoginLoadingState extends LoginStates {}
+
 class LoginSuccessState extends LoginStates {
 
   final LoginModel loginModel;
@@ -17,4 +19,3 @@ class LoginErrorState extends LoginStates
   LoginErrorState(this.error);
 }
 
-class LoginLoadingState extends LoginStates {}

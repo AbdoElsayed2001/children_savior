@@ -24,12 +24,15 @@ class DioHelper
 
 }) async
   {
-    return dio!.get(
+    dio!.options.headers = {
+      'Authorization' : 'token'
+    };
+
+    return await dio!.get(
       url,
       queryParameters: query,
     );
   }
-
 
   static Future<Response> postData ({
     required String url,
@@ -38,7 +41,11 @@ class DioHelper
 
   }) async
   {
-    return dio!.post(
+    dio!.options.headers = {
+      'Authorization' : 'token'
+    };
+
+    return await dio!.post(
       url,
       queryParameters: query,
       data: data,

@@ -1,6 +1,6 @@
 class LoginModel
 {
-  late bool status;
+  late int status;
   late String message;
   late UserData data;
 
@@ -8,19 +8,19 @@ class LoginModel
   {
     message = json['message'];
     status = json['status'];
-    data = (json['data'] != null ? UserData.fromJson(json['data']) : null)! ;
+    data = (json['data']!= null ? UserData.fromJson(json['data']) : null)!;
 
   }
 }
 
 class UserData{
   late int id;
-  late String name;
-  late String email;
-  late String phone;
-  late String image;
-  late String address;
-  late String access_token;
+  late var name;
+  late var email;
+  late var phone;
+  late var image;
+  late var address;
+  late var access_token;
   late int status;
 
 //   UserData({
