@@ -25,6 +25,7 @@ class LoginScreen extends StatelessWidget
     return BlocProvider(
       create: (BuildContext context) => LoginCubit(),
       child: BlocConsumer<LoginCubit,LoginStates>(
+        bloc: LoginCubit(),
         listener: (context, state) {
           if (state is LoginSuccessState)
             {
