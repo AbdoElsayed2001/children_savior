@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
+import '../../network/cache_helper.dart';
 import '../forgot_pass/forgot_pass.dart';
 import '../regester/register.dart';
 import '../widgets/auth_back.dart';
@@ -22,13 +23,12 @@ class LoginScreen extends StatelessWidget
     var emailController = TextEditingController();
     var passwordController = TextEditingController();
 
-    return BlocProvider(
-      create: (BuildContext context) => LoginCubit(),
-      child: BlocConsumer<LoginCubit,LoginStates>(
-        bloc: LoginCubit(),
+    return BlocConsumer<LoginCubit,LoginStates>(
         listener: (context, state) {
+          print(0000000000000000000000);
           if (state is LoginSuccessState)
             {
+              print('suceeeeeeeess');
               if (state.loginModel.status == 1 )
                 {
                   print(state.loginModel.message);
@@ -44,13 +44,13 @@ class LoginScreen extends StatelessWidget
                   //     fontSize: 16.0
                   // );
 
-                  // CacheHelper.saveData(
-                  //     key: 'token',
-                  //     value: state.loginModel.data.access_token).then((value)
-                  // {
-                  //   Navigator.of(context).pushNamed("bottomNavScreen");
-                  // }
-                  // );
+                  CacheHelper.saveData(
+                      key: 'token',
+                      value: state.loginModel.data.access_token).then((value)
+                  {
+                    Navigator.of(context).pushNamed("bottomNavScreen");
+                  }
+                  );
 
                 }else
                   {
@@ -132,8 +132,7 @@ class LoginScreen extends StatelessWidget
             ),
           );
         },
-      ),
-    );
+      );
   }
 
 }

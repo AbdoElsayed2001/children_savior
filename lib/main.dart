@@ -6,6 +6,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:kids_savior/account/edit_email.dart';
 import 'package:kids_savior/account/edit_name.dart';
 import 'package:kids_savior/account/edit_phone.dart';
+import 'package:kids_savior/auth/login/login_cubit.dart';
 import 'package:kids_savior/auth/splash.dart';
 import 'package:kids_savior/bloc_observer/bloc_observer.dart';
 import 'package:kids_savior/cubit/cubit.dart';
@@ -47,10 +48,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context)
   {
-    return BlocProvider(
-      create: (BuildContext context)  { return AppCubit()..changeAppMode(fromShared: isDark);},
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (BuildContext context)  { return AppCubit()..changeAppMode(fromShared: isDark);},),
+        BlocProvider(create: (BuildContext context) => LoginCubit()),
+      ],
       child: BlocConsumer<AppCubit , AppStates>(
-      listener: (context, state){},
+      listener: (context, state){
+        if (state is AppChangModeStates)
+          {
+            print('chaaaaange');
+          }
+        else{
+          print('nooooo');
+        }
+      },
       builder: (context, state){
         return GetMaterialApp(
           theme: ThemeData(
