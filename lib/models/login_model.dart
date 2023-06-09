@@ -15,11 +15,11 @@ class LoginModel
 
 class UserData{
   late int id;
-  late var name;
-  late var email;
-  late var phone;
+  late String name;
+  late String email;
+  late String phone;
   late var image;
-  late var address;
+  late String address;
   late var access_token;
   late int status;
 

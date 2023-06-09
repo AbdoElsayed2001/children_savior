@@ -30,9 +30,7 @@ class LoginCubit extends Cubit <LoginStates>
        print(value.data);
 
        loginModel = LoginModel.fromJson(value.data);
-       // print(loginModel.status);
-       // print(loginModel.message);
-       // print(loginModel.data.address);
+       print(loginModel.data.access_token);
 
        emit(LoginSuccessState(loginModel));
 

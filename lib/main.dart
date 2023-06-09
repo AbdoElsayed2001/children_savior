@@ -48,11 +48,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context)
   {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (BuildContext context)  { return AppCubit()..changeAppMode(fromShared: isDark);},),
-        BlocProvider(create: (BuildContext context) => LoginCubit()),
-      ],
+    return BlocProvider(
+      create: (BuildContext context)  { return AppCubit()..changeAppMode(fromShared: isDark);},
       child: BlocConsumer<AppCubit , AppStates>(
       listener: (context, state){
         if (state is AppChangModeStates)

@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:kids_savior/auth/widgets/auth_back.dart';
 import 'package:kids_savior/cubit/cubit.dart';
+import '../../network/cache_helper.dart';
 import '../forgot_pass/forgot_pass.dart';
 import '../regester/register.dart';
 import '../widgets/auth_btn.dart';
@@ -26,7 +27,50 @@ class LoginBody extends StatelessWidget {
     return BlocProvider(
       create: (BuildContext context) => LoginCubit(),
       child: BlocConsumer<LoginCubit,LoginStates>(
-        listener: (context,state) {} ,
+        listener: (context,state) {
+
+          if (state is LoginSuccessState)
+          {
+            if (state.loginModel.status == 1 )
+            {
+              print('1111');
+              print(state.loginModel.message);
+              print(state.loginModel.data.access_token);
+              print(state.loginModel.data.name);
+              // Fluttertoast.showToast(
+              //     msg: state.loginModel.message,
+              //     toastLength: Toast.LENGTH_SHORT,
+              //     gravity: ToastGravity.BOTTOM,
+              //     timeInSecForIosWeb: 1,
+              //     backgroundColor: Colors.green,
+              //     textColor: Colors.white,
+              //     fontSize: 16.0
+              // );
+
+              CacheHelper.saveData(
+                  key: 'access_token',
+                  value: state.loginModel.data.access_token).then((value)
+              {
+                Navigator.of(context).pushNamed("bottomNavScreen");
+              }
+              );
+
+            }else
+            {
+              print('00000');
+              print(state.loginModel.message);
+              // Fluttertoast.showToast(
+              //     msg: state.loginModel.message,
+              //     toastLength: Toast.LENGTH_SHORT,
+              //     gravity: ToastGravity.BOTTOM,
+              //     timeInSecForIosWeb: 1,
+              //     backgroundColor: Colors.red,
+              //     textColor: Colors.white,
+              //     fontSize: 16.0
+              // );
+            }
+          }
+        } ,
         builder:  (context , state)
         {
           return AuthBack(
