@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:shared_preferences/shared_preferences.dart';
 class CacheHelper {
   static SharedPreferences? sharedPreferences;
@@ -45,8 +43,5 @@ class CacheHelper {
 
     return await sharedPreferences!.setDouble(key, value);
   }
-
-
-
 
 }

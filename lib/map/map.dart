@@ -10,7 +10,6 @@ class Maps extends StatefulWidget{
 }
 
 class MapsState extends State<Maps> {
-
   late Position cl ;
   var lat ;
   var long ;
@@ -24,10 +23,9 @@ class MapsState extends State<Maps> {
    if (services == false ){
      AwesomeDialog(
        context : context,
-       title : "serices",
-       body : Text("location servise is not enabled"))..show();
+       title : "services",
+       body : const Text("location service is not enabled")).show();
    }
-
     per = await Geolocator.checkPermission();
     if (per == LocationPermission.denied){
       // per = await Geolocator.requestPermission();
@@ -37,7 +35,6 @@ class MapsState extends State<Maps> {
     }
     return per;
   }
-
   Future<void> getlatAndlong() async {
     cl = await Geolocator.getCurrentPosition().then((value) => value);
     lat = cl.latitude;
@@ -48,7 +45,6 @@ class MapsState extends State<Maps> {
     );
     setState((){});
   }
-
   @override
   void initState() {
     getper();
@@ -57,7 +53,6 @@ class MapsState extends State<Maps> {
   }
 
   late GoogleMapController gmc;
-
     @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,7 +5,6 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:kids_savior/account/edit_email.dart';
 import 'package:kids_savior/account/edit_name.dart';
 import 'package:kids_savior/account/edit_phone.dart';
-import 'package:kids_savior/auth/login/login_cubit.dart';
 import 'package:kids_savior/auth/splash.dart';
 import 'package:kids_savior/bloc_observer/bloc_observer.dart';
 import 'package:kids_savior/cubit/cubit.dart';
@@ -20,7 +18,6 @@ import 'package:kids_savior/notification/notification.dart';
 import 'package:kids_savior/search/matching.dart';
 import 'package:kids_savior/settings/settings.dart';
 import 'package:get/get.dart';
-
 import 'bottomNavBar/bottom_nav_screen.dart';
 
 

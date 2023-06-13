@@ -7,17 +7,14 @@ import 'package:kids_savior/home/home.dart';
 import 'package:kids_savior/map/map.dart';
 import 'package:kids_savior/my_children/my_children.dart';
 import 'package:kids_savior/network/cache_helper.dart';
-import 'package:kids_savior/network/dio_helper.dart';
 import 'package:kids_savior/search/search.dart';
 
 class AppCubit extends Cubit <AppStates>
 {
   AppCubit() : super(AppInitialState());
-
   static AppCubit get(context) => BlocProvider.of(context);
 
   int currentIndex = 0;
-
   List<Widget> Screens =
       [
         Home(),
@@ -32,7 +29,6 @@ class AppCubit extends Cubit <AppStates>
     currentIndex = index;
     emit(AppBottomNavBarStates());
   }
-
   bool? isDark = false;
   void changeAppMode({ bool? fromShared})
   {
@@ -50,8 +46,5 @@ class AppCubit extends Cubit <AppStates>
       }
       );
     }
-
   }
-
-
 }

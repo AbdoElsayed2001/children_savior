@@ -1,10 +1,4 @@
-
-import 'dart:convert';
-import 'dart:ffi';
-
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
-import 'package:kids_savior/models/login_model.dart';
 
 class DioHelper
 {
@@ -47,7 +41,7 @@ class DioHelper
   }) async
   {
     dio!.options.headers = {
-      'Authorization' : 'Bearer token'
+      'Authorization' : 'Bearer access_token'
     };
 
     return await dio!.post(
