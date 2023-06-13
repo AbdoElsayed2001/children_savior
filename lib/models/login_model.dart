@@ -20,7 +20,7 @@ class UserData{
   late String phone;
   late var image;
   late String address;
-  late var access_token;
+  late String access_token;
   late int status;
 
 //   UserData({
@@ -42,7 +42,7 @@ UserData.fromJson(Map<String, dynamic> json )
   image = json['image'];
   phone = json['phone'];
   name = json['name'];
-  access_token = json['token'];
+  access_token = json['access_token'];
   status = json['status'];
   address = json['address'];
 

@@ -23,6 +23,7 @@ class CacheHelper {
   })
   {
     return sharedPreferences!.getBool(key);
+
   }
 
   static getData({

@@ -33,7 +33,6 @@ class LoginBody extends StatelessWidget {
           {
             if (state.loginModel.status == 1 )
             {
-              print('1111');
               print(state.loginModel.message);
               print(state.loginModel.data.access_token);
               print(state.loginModel.data.name);
@@ -48,7 +47,7 @@ class LoginBody extends StatelessWidget {
               // );
 
               CacheHelper.saveData(
-                  key: 'access_token',
+                  key: 'Bearer access_token',
                   value: state.loginModel.data.access_token).then((value)
               {
                 Navigator.of(context).pushNamed("bottomNavScreen");
@@ -57,7 +56,6 @@ class LoginBody extends StatelessWidget {
 
             }else
             {
-              print('00000');
               print(state.loginModel.message);
               // Fluttertoast.showToast(
               //     msg: state.loginModel.message,

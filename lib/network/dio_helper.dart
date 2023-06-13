@@ -1,18 +1,23 @@
 
+import 'dart:convert';
+import 'dart:ffi';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:kids_savior/models/login_model.dart';
 
 class DioHelper
 {
   static Dio? dio;
 
-  static init (){
+   static init (){
     dio = Dio(
       BaseOptions(
         baseUrl: "https://kids-saviour.megaa-soft.com/api/",
         receiveDataWhenStatusError : true,
         headers: {
           'Accept' : 'application/json',
+          ' Authorization' : "access_token "
         }
       ),
     );
@@ -25,7 +30,7 @@ class DioHelper
 }) async
   {
     dio!.options.headers = {
-      'Authorization' : 'token'
+      'Authorization' : 'Bearer access_token'
     };
 
     return await dio!.get(
@@ -42,7 +47,7 @@ class DioHelper
   }) async
   {
     dio!.options.headers = {
-      'Authorization' : 'token'
+      'Authorization' : 'Bearer token'
     };
 
     return await dio!.post(

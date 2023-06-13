@@ -51,15 +51,7 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (BuildContext context)  { return AppCubit()..changeAppMode(fromShared: isDark);},
       child: BlocConsumer<AppCubit , AppStates>(
-      listener: (context, state){
-        if (state is AppChangModeStates)
-          {
-            print('chaaaaange');
-          }
-        else{
-          print('nooooo');
-        }
-      },
+      listener: (context, state){},
       builder: (context, state){
         return GetMaterialApp(
           theme: ThemeData(
