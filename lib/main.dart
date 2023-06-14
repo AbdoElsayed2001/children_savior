@@ -5,6 +5,8 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:kids_savior/account/edit_email.dart';
 import 'package:kids_savior/account/edit_name.dart';
 import 'package:kids_savior/account/edit_phone.dart';
+import 'package:kids_savior/auth/login/login.dart';
+import 'package:kids_savior/auth/login/login_body.dart';
 import 'package:kids_savior/auth/splash.dart';
 import 'package:kids_savior/bloc_observer/bloc_observer.dart';
 import 'package:kids_savior/cubit/cubit.dart';
@@ -30,15 +32,17 @@ void main() async
   await DioHelper.init();
 
   bool? isDark = CacheHelper.getBoolean(key: "isDark");
-
-  runApp(MyApp(isDark ?? true));
+  
+  runApp(MyApp(
+    isDark ?? true,
+  ));
 }
 
 class MyApp extends StatelessWidget {
- // const MyApp({Key? key}) : super(key: key);
 
   final bool isDark;
-  MyApp(this.isDark);
+  MyApp(
+      this.isDark,);
 
 
   // This widget is the root of your application.
