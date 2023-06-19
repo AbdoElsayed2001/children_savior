@@ -29,6 +29,7 @@ class AppCubit extends Cubit <AppStates>
     currentIndex = index;
     emit(AppBottomNavBarStates());
   }
+
   bool? isDark = false;
   void changeAppMode({ bool? fromShared})
   {
@@ -47,4 +48,12 @@ class AppCubit extends Cubit <AppStates>
       );
     }
   }
+
+  
+
+
+
+
+
+
 }

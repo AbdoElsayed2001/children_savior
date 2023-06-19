@@ -9,10 +9,6 @@ class DioHelper
       BaseOptions(
         baseUrl: "https://kids-saviour.megaa-soft.com/api/",
         receiveDataWhenStatusError : true,
-        headers: {
-          'Accept' : 'application/json',
-          ' Authorization' : "access_token "
-        }
       ),
     );
   }
@@ -24,6 +20,7 @@ class DioHelper
 }) async
   {
     dio!.options.headers = {
+      'Accept' : 'application/json',
       'Authorization' : 'Bearer access_token'
     };
 
@@ -41,6 +38,7 @@ class DioHelper
   }) async
   {
     dio!.options.headers = {
+      'Accept' : 'application/json',
       'Authorization' : 'Bearer access_token'
     };
 
