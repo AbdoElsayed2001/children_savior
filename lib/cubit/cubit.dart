@@ -49,6 +49,7 @@ class AppCubit extends Cubit <AppStates> {
   }
 
   HomeModel? homeModel;
+
   void getHomeData() {
     emit(LoadingHomeDataState());
 
@@ -56,11 +57,14 @@ class AppCubit extends Cubit <AppStates> {
       url: "home",
       token: token,
     ).then((value) {
+
+      print('success');
       homeModel = HomeModel.fromJson(value.data);
-      print(homeModel!.message);
+     print(homeModel!.data!.length);
 
       emit(SuccessHomeDataState());
     }).catchError((error) {
+
       print(error.toString());
       emit(ErrorHomeDataState());
     }

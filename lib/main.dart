@@ -33,7 +33,7 @@ void main() async
   await DioHelper.init();
 
   bool? isDark = CacheHelper.getBoolean(key: "isDark");
-  token = CacheHelper.getData(key: 'access_token');
+  token = CacheHelper.getData(key: 'Bearer access_token');
   
   runApp(MyApp(
     isDark ?? true,

@@ -31,9 +31,10 @@ class LoginBody extends StatelessWidget {
           {
             if (state.loginModel.status == 1 )
             {
-              print(state.loginModel.message);
-              print(state.loginModel.data.access_token);
-              print(state.loginModel.data.name);
+              // print(state.loginModel.message);
+              // print(state.loginModel.data.access_token);
+              // print(state.loginModel.data.name);
+
               // Fluttertoast.showToast(
               //     msg: state.loginModel.message,
               //     toastLength: Toast.LENGTH_SHORT,
