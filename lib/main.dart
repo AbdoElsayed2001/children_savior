@@ -21,6 +21,7 @@ import 'package:kids_savior/search/matching.dart';
 import 'package:kids_savior/settings/settings.dart';
 import 'package:get/get.dart';
 import 'bottomNavBar/bottom_nav_screen.dart';
+import 'conistants/conistants.dart';
 
 
 void main() async
@@ -32,7 +33,7 @@ void main() async
   await DioHelper.init();
 
   bool? isDark = CacheHelper.getBoolean(key: "isDark");
-  String token = CacheHelper.getData(key: 'access_token');
+  token = CacheHelper.getData(key: 'access_token');
   
   runApp(MyApp(
     isDark ?? true,
@@ -51,7 +52,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context)
   {
     return BlocProvider(
-      create: (BuildContext context)  { return AppCubit()..changeAppMode(fromShared: isDark);},
+      create: (BuildContext context)
+      {
+        return AppCubit()..changeAppMode(fromShared: isDark)..getHomeData();
+        },
       child: BlocConsumer<AppCubit , AppStates>(
       listener: (context, state){},
       builder: (context, state){

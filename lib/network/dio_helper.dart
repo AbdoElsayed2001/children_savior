@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:kids_savior/network/cache_helper.dart';
 
 class DioHelper
 {
@@ -15,13 +16,13 @@ class DioHelper
 
   static Future<Response> getData ({
     required String url,
-    required Map<String , dynamic > query,
-
+    Map<String , dynamic >? query,
+    String? token,
 }) async
   {
     dio!.options.headers = {
       'Accept' : 'application/json',
-      'Authorization' : 'Bearer access_token'
+      'Authorization' : token ,
     };
 
     return await dio!.get(
@@ -34,12 +35,12 @@ class DioHelper
     required String url,
     Map<String , dynamic >? query,
     required Map<String , dynamic> data,
-
+    String? token,
   }) async
   {
     dio!.options.headers = {
       'Accept' : 'application/json',
-      'Authorization' : 'Bearer access_token'
+      'Authorization' : token ,
     };
 
     return await dio!.post(

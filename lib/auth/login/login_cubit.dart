@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kids_savior/conistants/conistants.dart';
 import 'package:kids_savior/models/login_model.dart';
 
 import '../../network/dio_helper.dart';
@@ -20,6 +21,7 @@ class LoginCubit extends Cubit <LoginStates>
     emit(LoginLoadingState());
     DioHelper.postData(
       url: "login",
+      token: token,
       data: {
         'email' : email,
         'password' : password,
