@@ -1,6 +1,7 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:kids_savior/auth/widgets/auth_back.dart';
 import '../../network/cache_helper.dart';
@@ -27,7 +28,7 @@ class LoginBody extends StatelessWidget {
       child: BlocConsumer<LoginCubit,LoginStates>(
         listener: (context,state) {
 
-          if (state is LoginSuccessState)
+          if (state is LoginSuccessState )
           {
             if (state.loginModel.status == 1 )
             {
@@ -35,15 +36,15 @@ class LoginBody extends StatelessWidget {
               // print(state.loginModel.data.access_token);
               // print(state.loginModel.data.name);
 
-              // Fluttertoast.showToast(
-              //     msg: state.loginModel.message,
-              //     toastLength: Toast.LENGTH_SHORT,
-              //     gravity: ToastGravity.BOTTOM,
-              //     timeInSecForIosWeb: 1,
-              //     backgroundColor: Colors.green,
-              //     textColor: Colors.white,
-              //     fontSize: 16.0
-              // );
+              Fluttertoast.showToast(
+                  msg: 'تم تسجيل الدخول بنجاح',
+                  toastLength: Toast.LENGTH_SHORT,
+                  gravity: ToastGravity.BOTTOM,
+                  timeInSecForIosWeb: 1,
+                  backgroundColor: Colors.green,
+                  textColor: Colors.white,
+                  fontSize: 16.0
+              );
 
               CacheHelper.saveData(
                   key: 'Bearer access_token',
@@ -52,21 +53,33 @@ class LoginBody extends StatelessWidget {
                 Navigator.of(context).pushNamed("bottomNavScreen");
               }
               );
-
-            }else
-            {
-              print(state.loginModel.message);
-              // Fluttertoast.showToast(
-              //     msg: state.loginModel.message,
-              //     toastLength: Toast.LENGTH_SHORT,
-              //     gravity: ToastGravity.BOTTOM,
-              //     timeInSecForIosWeb: 1,
-              //     backgroundColor: Colors.red,
-              //     textColor: Colors.white,
-              //     fontSize: 16.0
-              // );
             }
           }
+          else if(state is LoginLoadingState)
+          {
+            Fluttertoast.showToast(
+                msg: "جاري التأكد من صحة البيانات",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.BOTTOM,
+                timeInSecForIosWeb: 1,
+                backgroundColor: Colors.amber,
+                textColor: Colors.white,
+                fontSize: 16.0
+            );
+          }
+          else if(state is LoginErrorState)
+          {
+            Fluttertoast.showToast(
+                msg: "بيانات الدخول غير صحيحة",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.BOTTOM,
+                timeInSecForIosWeb: 1,
+                backgroundColor: Colors.red,
+                textColor: Colors.white,
+                fontSize: 16.0
+            );
+          }
+
         } ,
         builder:  (context , state)
         {

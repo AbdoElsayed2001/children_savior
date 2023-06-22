@@ -17,11 +17,8 @@ class Home extends StatelessWidget {
       builder: (context,state){
         return Scaffold(
           body: SafeArea(
-            child: ConditionalBuilder(
-              condition: AppCubit.get(context).homeModel != null ,
-              fallback: (context) => Center(child: CircularProgressIndicator(),),
-              builder: (context) => ListView.builder(
-                itemCount: AppCubit.get(context).homeModel!.data.length ,
+            child: ListView.builder(
+                itemCount: AppCubit.get(context).homeModel.length ,
                 itemBuilder: (context, i) {
                   return Column(
                     children: [
@@ -31,8 +28,9 @@ class Home extends StatelessWidget {
                         margin: EdgeInsetsDirectional.only(
                             start: 16, top: 0, end: 16, bottom: 0),
                         decoration: BoxDecoration(
-                          image:  DecorationImage(image: NetworkImage(AppCubit.get(context).homeModel!.data[0].image //"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGKikGuo9ITvCvFo497pdDc5AaWYU_qZy7lA&usqp=CAU"
-                          ),fit: BoxFit.fill),
+                          image:  DecorationImage(image: NetworkImage(AppCubit.get(context).homeModel[0].data[0].image
+                            //"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGKikGuo9ITvCvFo497pdDc5AaWYU_qZy7lA&usqp=CAU"
+                              ),fit: BoxFit.fill),
                           // boxShadow: [
                           //   BoxShadow(
                           //     color: Colors.grey.shade400,
@@ -134,7 +132,6 @@ class Home extends StatelessWidget {
                     ],
                   );
                 },
-              ),
             ),
           ),
         );

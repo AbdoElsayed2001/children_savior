@@ -49,7 +49,7 @@ class AppCubit extends Cubit <AppStates> {
     }
   }
 
-  ChildrenResponse? homeModel;
+ List <ChildrenResponse> homeModel = [];
 
   void getHomeData() {
     emit(LoadingHomeDataState());
@@ -59,11 +59,13 @@ class AppCubit extends Cubit <AppStates> {
       token: token,
     ).then((value) {
 
+
+      homeModel = ChildrenResponse.fromJson(value.data) as List<ChildrenResponse>;
+     print(homeModel[0].data[0].name);
       print('success');
-      ChildrenResponse homeModel = ChildrenResponse.fromJson(value.data);
-     print(homeModel);
 
       emit(SuccessHomeDataState());
+
     }).catchError((error) {
 
       print(error.toString());

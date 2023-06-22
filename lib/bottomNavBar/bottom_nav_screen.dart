@@ -18,6 +18,8 @@ class BottomNavScreen extends StatelessWidget{
 
           return  Scaffold(
             appBar: AppBar(
+              automaticallyImplyLeading: false,
+              leading: null,
               title: Text(
                 "Children Savior",
                 textAlign: TextAlign.start,
