@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (BuildContext context)
       {
-        return AppCubit()..changeAppMode(fromShared: isDark)..getHomeData();
+        return AppCubit()..changeAppMode(fromShared: isDark)..getHomeData()..getMyChildrenData()..getProfileData();
         },
       child: BlocConsumer<AppCubit , AppStates>(
       listener: (context, state){},

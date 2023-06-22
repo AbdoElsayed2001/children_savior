@@ -6,7 +6,8 @@ import 'package:kids_savior/conistants/conistants.dart';
 import 'package:kids_savior/cubit/states.dart';
 import 'package:kids_savior/home/home.dart';
 import 'package:kids_savior/map/map.dart';
-import 'package:kids_savior/models/home_model.dart';
+import 'package:kids_savior/models/home_model2.dart';
+import 'package:kids_savior/models/showProfile_model.dart';
 import 'package:kids_savior/my_children/my_children.dart';
 import 'package:kids_savior/network/cache_helper.dart';
 import 'package:kids_savior/network/dio_helper.dart';
@@ -48,7 +49,7 @@ class AppCubit extends Cubit <AppStates> {
     }
   }
 
-  HomeModel? homeModel;
+  ChildrenResponse? homeModel;
 
   void getHomeData() {
     emit(LoadingHomeDataState());
@@ -59,14 +60,61 @@ class AppCubit extends Cubit <AppStates> {
     ).then((value) {
 
       print('success');
-      homeModel = HomeModel.fromJson(value.data);
-     print(homeModel!.data!.length);
+      ChildrenResponse homeModel = ChildrenResponse.fromJson(value.data);
+     print(homeModel);
 
       emit(SuccessHomeDataState());
     }).catchError((error) {
 
       print(error.toString());
       emit(ErrorHomeDataState());
+    }
+    );
+  }
+
+  ChildrenResponse? myChildrenModel;
+
+  void getMyChildrenData() {
+    emit(LoadingMyChildrenDataState());
+
+    DioHelper.getData(
+      url: "my-children",
+      token: token,
+    ).then((value) {
+
+      print('success');
+      ChildrenResponse myChildrenModel = ChildrenResponse.fromJson(value.data);
+      print(myChildrenModel);
+
+      emit(SuccessMyChildrenDataState());
+    }).catchError((error) {
+
+      print(error.toString());
+      emit(ErrorMyChildrenDataState());
+    }
+    );
+  }
+
+
+  UserResponse? showProfileModel;
+
+  void getProfileData() {
+    emit(LoadingShowProfileDataState());
+
+    DioHelper.getData(
+      url: "profile",
+      token: token,
+    ).then((value) {
+
+      print('success');
+      UserResponse showProfileModel = UserResponse.fromJson(value.data);
+      print(showProfileModel);
+
+      emit(SuccessHomeDataState());
+    }).catchError((error) {
+
+      print(error.toString());
+      emit(ErrorShowProfileDataState());
     }
     );
   }

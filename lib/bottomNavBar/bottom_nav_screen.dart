@@ -20,6 +20,7 @@ class BottomNavScreen extends StatelessWidget{
             appBar: AppBar(
               title: Text(
                 "Children Savior",
+                textAlign: TextAlign.start,
               ),
               actions: [
                 IconButton(
