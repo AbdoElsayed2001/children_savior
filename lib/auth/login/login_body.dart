@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:kids_savior/auth/widgets/auth_back.dart';
+import 'package:kids_savior/conistants/conistants.dart';
 import '../../network/cache_helper.dart';
 import '../forgot_pass/forgot_pass.dart';
 import '../regester/register.dart';
@@ -37,7 +38,7 @@ class LoginBody extends StatelessWidget {
               // print(state.loginModel.data.name);
 
               Fluttertoast.showToast(
-                  msg: 'تم تسجيل الدخول بنجاح',
+                  msg: 'Logged in successfully',
                   toastLength: Toast.LENGTH_SHORT,
                   gravity: ToastGravity.BOTTOM,
                   timeInSecForIosWeb: 1,
@@ -50,6 +51,7 @@ class LoginBody extends StatelessWidget {
                   key: 'Bearer access_token',
                   value: state.loginModel.data.access_token).then((value)
               {
+                token = state.loginModel.data.access_token;
                 Navigator.of(context).pushNamed("bottomNavScreen");
               }
               );
@@ -58,7 +60,7 @@ class LoginBody extends StatelessWidget {
           else if(state is LoginLoadingState)
           {
             Fluttertoast.showToast(
-                msg: "جاري التأكد من صحة البيانات",
+                msg: "The data is being validated",
                 toastLength: Toast.LENGTH_SHORT,
                 gravity: ToastGravity.BOTTOM,
                 timeInSecForIosWeb: 1,
@@ -70,7 +72,7 @@ class LoginBody extends StatelessWidget {
           else if(state is LoginErrorState)
           {
             Fluttertoast.showToast(
-                msg: "بيانات الدخول غير صحيحة",
+                msg: "Login information is incorrect",
                 toastLength: Toast.LENGTH_SHORT,
                 gravity: ToastGravity.BOTTOM,
                 timeInSecForIosWeb: 1,

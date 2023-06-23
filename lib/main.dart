@@ -141,7 +141,7 @@ class MyApp extends StatelessWidget {
               backgroundColor: HexColor("18191a"),
               elevation: 0.0,
               titleTextStyle: TextStyle(
-                fontWeight: FontWeight.bold, color: Colors.white, fontSize: 24,fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.bold, color: HexColor("007acc"), fontSize: 24,fontStyle: FontStyle.italic,
               ),
               iconTheme: IconThemeData(
                   color: Colors.white

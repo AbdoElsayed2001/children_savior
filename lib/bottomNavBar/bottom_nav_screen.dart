@@ -25,14 +25,14 @@ class BottomNavScreen extends StatelessWidget{
                 textAlign: TextAlign.start,
               ),
               actions: [
-                IconButton(
-                  icon: Icon(Icons.notifications_none_rounded),
-                  //color: Colors.black,
-                  iconSize: 30,
-                  onPressed: () {
-                    Navigator.of(context).pushNamed("appNotification");
-                  },
-                ),
+                // IconButton(
+                //   icon: Icon(Icons.notifications_none_rounded),
+                //   //color: Colors.black,
+                //   iconSize: 30,
+                //   onPressed: () {
+                //     Navigator.of(context).pushNamed("appNotification");
+                //   },
+                // ),
                 IconButton(
                   icon: Icon(Icons.settings_outlined),
                   //color: Colors.black,
