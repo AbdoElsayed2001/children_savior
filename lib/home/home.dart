@@ -12,12 +12,27 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AppCubit,AppStates>(
-      listener: (context,state){},
+      listener: (context,state){
+        if (state is SuccessHomeDataState)
+          {
+            print('yeeees');
+            print(AppCubit.get(context).homeModel!.message);
+          }
+        else if (state is LoadingHomeDataState)
+          {
+            print('loading');
+          }
+        else {
+          print('nooooooooo');
+        }
+      },
       builder: (context,state){
+        var home = AppCubit.get(context).homeModel;
+        print(home);
         return Scaffold(
           body: SafeArea(
             child: ConditionalBuilder(
-              condition: AppCubit.get(context).homeModel != null ,
+              condition: home != null ,
               fallback: (context) => Center(child: CircularProgressIndicator(),),
               builder: (context) => ListView.builder(
                   itemCount: AppCubit.get(context).homeModel!.data.length,

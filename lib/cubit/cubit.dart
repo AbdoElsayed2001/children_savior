@@ -55,7 +55,7 @@ class AppCubit extends Cubit <AppStates> {
     emit(LoadingHomeDataState());
 
     DioHelper.getData(
-      url: "home",
+      url: 'home',
       token: token,
     ).then((value) {
 

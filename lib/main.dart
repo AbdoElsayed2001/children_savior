@@ -259,6 +259,9 @@ class MyApp extends StatelessWidget {
             "bottomNavScreen": (context) {
               return BottomNavScreen();
             },
+            "login": (context) {
+              return LoginScreen();
+            },
           },
         );
       },

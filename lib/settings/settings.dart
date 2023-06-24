@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kids_savior/cubit/cubit.dart';
+import 'package:kids_savior/network/cache_helper.dart';
 
 class Settings extends StatelessWidget {
   @override
@@ -75,9 +76,22 @@ class Settings extends StatelessWidget {
                 horizontalTitleGap: 0,
               ),
               ListTile(
-                title: Text(
+                title: TextButton(
+                  style: ButtonStyle(
+                    alignment: AlignmentDirectional.centerStart
+                  ),
+                  onPressed: (){
+                    CacheHelper.removeData(Key: 'token').then((value) {
+                      if (value)
+                        {
+                          Navigator.of(context).pushNamed("login");
+                        }
+                    });
+                  },
+                  child: Text(
+                    textAlign: TextAlign.start,
                   "Log Out",
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyText1,)
                 ),
                 leading: Icon(
                   Icons.logout,
