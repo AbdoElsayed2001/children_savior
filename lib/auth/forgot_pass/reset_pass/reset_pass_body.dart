@@ -20,7 +20,9 @@ class ResetPassBody extends StatelessWidget {
           const Spacer(),
           const HeaderTitle(title: 'Reset Password ?'),
           const SizedBox(height: 16),
-          AuthField(  controller: passwordController,
+          AuthField(
+            isPassowrd:false,
+            controller: passwordController,
             validation: (String? value ){
               if (value!.isEmpty){
                 return 'password is too short ';
@@ -30,7 +32,9 @@ class ResetPassBody extends StatelessWidget {
             type: TextInputType.visiblePassword,
           ),
           const SizedBox(height: 16),
-          AuthField( controller: passwordController,
+          AuthField(
+          isPassowrd: false,
+            controller: passwordController,
             validation: (String? value ){
               if (value!.isEmpty){
                 return 'password is too short ';
@@ -40,7 +44,9 @@ class ResetPassBody extends StatelessWidget {
             type: TextInputType.visiblePassword,
           ),
           const SizedBox(height: 16),
-          AuthField( controller: passwordController,
+          AuthField(
+            isPassowrd: false,
+            controller: passwordController,
             validation: (String? value ){
               if (value!.isEmpty){
                 return 'password is too short ';

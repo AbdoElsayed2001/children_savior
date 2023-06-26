@@ -41,6 +41,7 @@ class DioHelper
     dio!.options.headers = {
       'Accept' : 'application/json',
       'Authorization' : token ,
+      'token' : "6a5630c991944555b8a7e813de4c1970"
     };
 
     return await dio!.post(

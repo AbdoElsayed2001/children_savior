@@ -47,17 +47,17 @@ class Settings extends StatelessWidget {
               const SizedBox(
                 height: 16,
               ),
-              ListTile(
-                title: Text(
-                  "Language",
-                  style: Theme.of(context).textTheme.bodyText1,
-                ),
-                leading: Icon(
-                  Icons.language,
-                  //color: Colors.black,
-                ),
-                horizontalTitleGap: 0,
-              ),
+              // ListTile(
+              //   title: Text(
+              //     "Language",
+              //     style: Theme.of(context).textTheme.bodyText1,
+              //   ),
+              //   leading: Icon(
+              //     Icons.language,
+              //     //color: Colors.black,
+              //   ),
+              //   horizontalTitleGap: 0,
+              // ),
               ListTile(
                 title: Text(
                   "Dark Mode",

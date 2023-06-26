@@ -96,6 +96,7 @@ class LoginBody extends StatelessWidget {
                     const HeaderTitle(title: 'Sign In'),
                     const SizedBox(height: 16),
                     AuthField(
+                      isPassowrd: false,
                       controller: emailController,
                       validation: (String? value){
                         if (value!.isEmpty){
@@ -106,6 +107,7 @@ class LoginBody extends StatelessWidget {
                     ),
                     const SizedBox(height: 32),
                     AuthField(
+                      isPassowrd: true,
                       controller: passwordController,
                       validation: (String? value){
                         if (value!.isEmpty){

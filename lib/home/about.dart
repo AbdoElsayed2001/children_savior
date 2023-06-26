@@ -107,19 +107,19 @@ class _AboutState extends State<About> {
         ),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text("Information:",style: Theme.of(context).textTheme.bodyText1,),
+            child: Text("Name:",style: Theme.of(context).textTheme.bodyText1,),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Text("i found this child in Ahmed Maher Street she say her name is Amira if anyone know her please call me",style: Theme.of(context).textTheme.caption,),
+            child: Text("Nour Abdullah",style: Theme.of(context).textTheme.caption,),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text("Location:",style: Theme.of(context).textTheme.bodyText1,),
+            child: Text("Address:",style: Theme.of(context).textTheme.bodyText1,),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Text("Mansoura,Ahmed Maher Street",style: Theme.of(context).textTheme.caption,),
+            child: Text("Mansoura",style: Theme.of(context).textTheme.caption,),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),

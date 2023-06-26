@@ -1,4 +1,3 @@
-//import 'dart:html';
 
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
@@ -9,14 +8,35 @@ import 'package:kids_savior/cubit/states.dart';
 
 class Home extends StatelessWidget {
 
+  var childlist = [
+    {
+      "name":"Amira Abdullah",
+      "images":"https://www.photosmix.com/wp-content/uploads/2023/01/%D8%B5-%D8%A3%D8%B1%D9%88%D8%B9-%D8%B5%D9%88%D8%B1-%D8%A3%D8%B7%D9%81%D8%A7%D9%84-%D8%A3%D9%88%D9%84%D8%A7%D8%AF-%D8%AD%D9%84%D9%88%D9%8A%D9%86-1.jpg",
+    },
+    // {
+    //   "name":"Adam Abdullah",
+    //   "images":"https://www.eqrae.com/wp-content/uploads/2020/03/23-96.jpg",
+    // },
+    {
+      "images":"https://twice.ma/wp-content/uploads/2022/10/1665517891_795_%D8%B5%D9%88%D8%B1-%D8%A7%D8%B7%D9%81%D8%A7%D9%84-%D8%AD%D9%84%D9%88%D9%8A%D9%86-2022-%D8%A7%D8%B7%D9%81%D8%A7%D9%84-%D8%A8%D9%8A%D8%A8%D9%8A-%D8%AD%D9%84%D9%88%D9%8A%D9%86-%D8%AC%D8%AF%D8%A7.jpg"
+    },
+    {
+      "images":"https://nicee.cc/wp-content/uploads/2017/08/2484.png"
+    },
+    {
+      "images":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBgYgUf9ow_qsvc9Nqi5DAukZ3t1rCUuzgPUdFd5KqWpp3fIZtPQv49f3J-Lj1rYvhQRQ&usqp=CAU"
+    }
+  ];
+
   @override
   Widget build(BuildContext context) {
+    var home = AppCubit.get(context).homeModel;
     return BlocConsumer<AppCubit,AppStates>(
       listener: (context,state){
         if (state is SuccessHomeDataState)
           {
             print('yeeees');
-            print(AppCubit.get(context).homeModel!.message);
+            print(state.homeModel.message);
           }
         else if (state is LoadingHomeDataState)
           {
@@ -27,16 +47,18 @@ class Home extends StatelessWidget {
         }
       },
       builder: (context,state){
-        var home = AppCubit.get(context).homeModel;
+        print(state);
         print(home);
         return Scaffold(
           body: SafeArea(
             child: ConditionalBuilder(
-              condition: home != null ,
+              condition: state is SuccessHomeDataState,
               fallback: (context) => Center(child: CircularProgressIndicator(),),
               builder: (context) => ListView.builder(
-                  itemCount: AppCubit.get(context).homeModel!.data.length,
-                  itemBuilder: (context, i) {
+                shrinkWrap: true,
+                  itemCount: childlist.length,
+                  //AppCubit.get(context).homeModel!.data.length,
+                  itemBuilder: (context , i) {
                     return Column(
                       children: [
                         Container(
@@ -45,8 +67,10 @@ class Home extends StatelessWidget {
                           margin: EdgeInsetsDirectional.only(
                               start: 16, top: 0, end: 16, bottom: 0),
                           decoration: BoxDecoration(
-                            image:  DecorationImage(image: NetworkImage(AppCubit.get(context).homeModel!.data[0].image
-                              //"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGKikGuo9ITvCvFo497pdDc5AaWYU_qZy7lA&usqp=CAU"
+                            image:  DecorationImage(image: NetworkImage(
+                              "${childlist[i]['images']}",
+            //AppCubit.get(context).homeModel!.data[0].image
+                             // "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGKikGuo9ITvCvFo497pdDc5AaWYU_qZy7lA&usqp=CAU"
                                 ),fit: BoxFit.fill),
                             // boxShadow: [
                             //   BoxShadow(

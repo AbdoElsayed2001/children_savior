@@ -14,7 +14,10 @@ import 'package:kids_savior/network/dio_helper.dart';
 import 'package:kids_savior/search/search.dart';
 
 class AppCubit extends Cubit <AppStates> {
-  AppCubit() : super(AppInitialState());
+
+  AppCubit() : super(AppInitialState()){
+    homeModel = null;
+  }
 
   static AppCubit get(context) => BlocProvider.of(context);
 
@@ -49,7 +52,7 @@ class AppCubit extends Cubit <AppStates> {
     }
   }
 
-  ChildrenResponse? homeModel ;
+  ChildrenResponse ? homeModel;
 
   void getHomeData() {
     emit(LoadingHomeDataState());
@@ -60,13 +63,15 @@ class AppCubit extends Cubit <AppStates> {
     ).then((value) {
 
 
-      homeModel = ChildrenResponse.fromJson(value.data) ;
+      homeModel = ChildrenResponse.fromJson(value.data);
      print(homeModel!.data[0].name);
      print(homeModel!.status);
      print(value.data);
      print('success');
 
-      emit(SuccessHomeDataState());
+      emit(SuccessHomeDataState(homeModel!));
+      homeModel = ChildrenResponse.fromJson(value.data);
+
 
     }).catchError((error) {
 
@@ -114,7 +119,7 @@ class AppCubit extends Cubit <AppStates> {
       UserResponse showProfileModel = UserResponse.fromJson(value.data);
       print(showProfileModel);
 
-      emit(SuccessHomeDataState());
+      emit(SuccessShowProfileDataState());
     }).catchError((error) {
 
       print(error.toString());

@@ -1,3 +1,5 @@
+import '../models/home_model2.dart';
+
 abstract class AppStates {}
 
 class AppInitialState extends AppStates {}
@@ -8,7 +10,10 @@ class AppChangModeStates extends AppStates {}
 
 class LoadingHomeDataState extends AppStates {}
 
-class SuccessHomeDataState extends AppStates {}
+class SuccessHomeDataState extends AppStates {
+  late ChildrenResponse homeModel;
+  SuccessHomeDataState(this.homeModel);
+}
 
 class ErrorHomeDataState extends AppStates {}
 

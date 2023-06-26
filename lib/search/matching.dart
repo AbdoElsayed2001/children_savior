@@ -34,12 +34,16 @@ class Matching extends StatelessWidget{
       Center(
         child: Column(
         children: [
-        Container(
-        height: 150,
-          width: double.infinity,
-          margin: EdgeInsetsDirectional.only(
-              start: 16, top: 8, end: 16, bottom: 0),
-          decoration: BoxDecoration(
+          Container(
+            height: 180,
+            width: double.infinity,
+            margin: EdgeInsetsDirectional.only(
+                start: 16, top: 0, end: 16, bottom: 0),
+            decoration: BoxDecoration(
+              image:  DecorationImage(image: NetworkImage(
+                //AppCubit.get(context).homeModel!.data[0].image
+                 "https://www.eqrae.com/wp-content/uploads/2020/03/23-96.jpg"
+              ),fit: BoxFit.fill),
               // boxShadow: [
               //   BoxShadow(
               //     color: Colors.grey.shade400,
@@ -54,17 +58,9 @@ class Matching extends StatelessWidget{
                 bottomLeft: Radius.zero,
                 bottomRight: Radius.zero,
               ),
-              color: Colors.red),
-          child: Center(
-            child: CircleAvatar(
-              backgroundColor: Colors.red,
-              radius: 45,
-              backgroundImage: NetworkImage(
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGKikGuo9ITvCvFo497pdDc5AaWYU_qZy7lA&usqp=CAU",
-              ),
+              // color: Colors.blue
             ),
           ),
-        ),
         Row(
           children: [
             Expanded(

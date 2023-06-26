@@ -41,7 +41,7 @@ class MapsState extends State<Maps> {
     long = cl.longitude;
     _kGooglePlex = CameraPosition(
       target: LatLng(lat, long),
-      zoom: 12.4746,
+      zoom: 16.5746,
     );
     setState((){});
   }
@@ -53,22 +53,69 @@ class MapsState extends State<Maps> {
   }
 
   late GoogleMapController gmc;
+  late Set<Marker> mymarker = {
+    Marker(markerId: MarkerId("1"),position: LatLng(30.830894,31.507964),
+       // LatLng(31.042377,31.351838),
+    ),
+    Marker(markerId: MarkerId("2"),position: LatLng(31.0815580,  31.5950530),
+      // LatLng(31.042377,31.351838),
+    )
+  };
+
     @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: Stack(
+        alignment: AlignmentDirectional.bottomStart,
         children: [
-          _kGooglePlex == null ? Center(child: CircularProgressIndicator(),) :
-          Expanded(
-            child: GoogleMap(
-              mapType: MapType.normal,
-              initialCameraPosition: _kGooglePlex!,
-              onMapCreated: (GoogleMapController controller) {
-                gmc = controller;
-              },
-            ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _kGooglePlex == null ? Center(child: CircularProgressIndicator(),) :
+              Expanded(
+                child: GoogleMap(
+                  markers: mymarker,
+                  mapType: MapType.normal,
+                  initialCameraPosition: _kGooglePlex!,
+                  onMapCreated: (GoogleMapController controller) {
+                    gmc = controller;
+                  },
+                ),
+              ),
+            ],
           ),
+          // Padding(
+          //   padding: const EdgeInsets.all(6.0),
+          //   child: ElevatedButton(onPressed: (){
+          //     LatLng lating = LatLng(31.0815580,  31.5950530);
+          //     gmc.animateCamera(CameraUpdate.newCameraPosition(
+          //         CameraPosition(
+          //         target: lating,zoom: 19,//tilt: 45,bearing: 45
+          //     )
+          //     ));
+          //   },
+          //       style: ButtonStyle(
+          //         //padding:  MaterialStateProperty.all(const EdgeInsets.symmetric(vertical: 15, horizontal: 20),),
+          //         fixedSize: MaterialStateProperty.all(Size(105, 40)),
+          //         shape: MaterialStateProperty.all(RoundedRectangleBorder(
+          //           borderRadius: BorderRadius.circular(25),
+          //         ),
+          //         ),
+          //       ),
+          //       child: Row(
+          //         children: [
+          //           CircleAvatar(
+          //             radius: 12,
+          //             backgroundImage:
+          //             NetworkImage(
+          //                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS_zLH8I0DFX2oFlpo3_nQLiS8Uib4u05AmQ&usqp=CAU"
+          //             ),
+          //           ),
+          //           SizedBox(width: 4,),
+          //           Text('Adam'),
+          //         ],
+          //       )
+          //   ),),
         ],
       ),
     );

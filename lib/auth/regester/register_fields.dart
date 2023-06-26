@@ -84,7 +84,9 @@ class RegisterFields extends StatelessWidget {
             key: formKey,
             child: Column(
               children: [
-                AuthField( controller: nameController,
+                AuthField(
+                  isPassowrd: false,
+                  controller: nameController,
                   validation: (String? value ){
                     if (value!.isEmpty){
                       return 'please enter your name';
@@ -94,7 +96,8 @@ class RegisterFields extends StatelessWidget {
                   type: TextInputType.name,
                 ),
                 const SizedBox(height: 6),
-                AuthField( controller: emailController,
+                AuthField( isPassowrd: false,
+                  controller: emailController,
                   validation: (String? value ){
                     if (value!.isEmpty){
                       return 'please enter your email';
@@ -104,7 +107,9 @@ class RegisterFields extends StatelessWidget {
                   type: TextInputType.emailAddress,
                 ),
                 const SizedBox(height: 6),
-                AuthField( controller: phoneController,
+                AuthField(
+                  isPassowrd: false,
+                  controller: phoneController,
                   validation: (String? value ){
                     if (value!.isEmpty){
                       return 'please enter your phone';
@@ -114,7 +119,9 @@ class RegisterFields extends StatelessWidget {
                   type: TextInputType.phone,
                 ),
                 const SizedBox(height: 6),
-                AuthField( controller: passwordController,
+                AuthField(
+                  isPassowrd: true,
+                  controller: passwordController,
                   validation: (String? value ){
                     if (value!.isEmpty){
                       return 'please enter your password';
@@ -124,7 +131,9 @@ class RegisterFields extends StatelessWidget {
                   type: TextInputType.visiblePassword,
                 ),
                 const SizedBox(height: 6),
-                AuthField(controller: addressController,
+                AuthField(
+                  isPassowrd: false,
+                  controller: addressController,
                   validation: (String? value ){
                     if (value!.isEmpty){
                       return 'please enter your address';
