@@ -3,13 +3,12 @@
 Children Savior is a mobile application built with **Flutter** to help track and ensure children's safety.  
 
 ## 🚀 Features  
-✅ Real-time location tracking using Google Maps API  
-✅ Secure authentication with Firebase  
+✅ Real-time location tracking using Google Maps API    
 ✅ Push notifications for emergency alerts  
 
 ## 🔧 Technologies Used  
 - Flutter & Dart  
-- Firebase (Auth, Firestore, Cloud Messaging)  
+- Restfull Api's 
 - Bloc State Management  
 
 ## 🛠️ Installation  
